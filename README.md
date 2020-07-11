@@ -7,3 +7,5 @@ Monochrome vim colorscheme
 ![C](screenshots/c.png)
 
 ![Python](screenshots/python.png)
+
+![Light theme](screenshots/light.png)
