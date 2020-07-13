@@ -294,6 +294,22 @@ call <sid>hi('yamlKey', s:voidFg, s:none, 'none')
 call <sid>hi('DirvishPathTail', s:voidBlue, s:none, 'none')
 call <sid>hi('DirvishArg', s:voidFg, s:none, 'none')
 
+" FZF
+let g:fzf_colors =
+  \ { 'fg':      ['fg', 'Normal'],
+    \ 'bg':      ['bg', 'Normal'],
+    \ 'hl':      ['fg', 'Comment'],
+    \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+    \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+    \ 'hl+':     ['fg', 'Statement'],
+    \ 'info':    ['fg', 'PreProc'],
+    \ 'border':  ['fg', 'Ignore'],
+    \ 'prompt':  ['fg', 'Conditional'],
+    \ 'pointer': ['fg', 'Exception'],
+    \ 'marker':  ['fg', 'Keyword'],
+    \ 'spinner': ['fg', 'Label'],
+    \ 'header':  ['fg', 'Comment'] }
+
 " Fugitive
 call <sid>hi('fugitiveHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveUntrackedHeading', s:voidFg, s:none, 'bold')
