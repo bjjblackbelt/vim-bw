@@ -43,6 +43,7 @@ let s:voidGray4 = {'gui': '#A89984', 'cterm256': '249'}
 let s:voidGray5 = {'gui': '#D0D0D0', 'cterm256': '253'}
 let s:voidGray6 = {'gui': '#B0B0B0', 'cterm256': '250'}
 let s:voidGray7 = {'gui': '#797974', 'cterm256': '247'}
+let s:voidGray8 = {'gui': '#EBEBEB', 'cterm256': '248'}
 let s:voidCream1 = {'gui': '#F3F3EF', 'cterm256': '255'}
 let s:voidCream2 = {'gui': '#EBDBB2', 'cterm256': '253'}
 let s:voidBlue = {'gui': '#83A598', 'cterm256': '109'}
@@ -63,7 +64,7 @@ if s:is_dark
 else
     let s:voidFg = s:voidBlack1
     let s:voidBg = s:voidCream1
-    let s:voidBg2 = s:voidGray5  " used for cursor line etc
+    let s:voidBg2 = s:voidGray8  " used for cursor line etc
     let s:voidShade1 = s:voidCream2
     let s:voidShade2 = s:voidGray6
     let s:voidShade3 = s:voidGray4
