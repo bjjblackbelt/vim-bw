@@ -36,20 +36,21 @@ endfun
 let s:is_dark=(&background == 'dark')
 
 let s:voidBlack1 = {'gui': '#282828', 'cterm256': '235'}
-let s:voidGray1 = {'gui': '#504945', 'cterm256': '237'}
-let s:voidGray2 = {'gui': '#665C64', 'cterm256': '239'}
-let s:voidGray3 = {'gui': '#928374', 'cterm256': '242'}
-let s:voidGray4 = {'gui': '#A89984', 'cterm256': '249'}
-let s:voidGray5 = {'gui': '#D0D0D0', 'cterm256': '253'}
-let s:voidGray6 = {'gui': '#B0B0B0', 'cterm256': '250'}
-let s:voidGray7 = {'gui': '#797974', 'cterm256': '247'}
-let s:voidGray8 = {'gui': '#EBEBEB', 'cterm256': '248'}
+let s:voidBlack2 = {'gui': '#3A3A3A', 'cterm256': '237'}
+let s:voidGray1 = {'gui': '#504945', 'cterm256': '239'}
+let s:voidGray2 = {'gui': '#665C64', 'cterm256': '240'}
+let s:voidGray3 = {'gui': '#928374', 'cterm256': '241'}
+let s:voidGray4 = {'gui': '#A89984', 'cterm256': '242'}
+let s:voidGray5 = {'gui': '#D0D0D0', 'cterm256': '252'}
+let s:voidGray6 = {'gui': '#B0B0B0', 'cterm256': '249'}
+let s:voidGray7 = {'gui': '#797974', 'cterm256': '243'}
+let s:voidGray8 = {'gui': '#EBEBEB', 'cterm256': '254'}
 let s:voidCream1 = {'gui': '#F3F3EF', 'cterm256': '255'}
-let s:voidCream2 = {'gui': '#EBDBB2', 'cterm256': '253'}
+let s:voidCream2 = {'gui': '#EBDBB2', 'cterm256': '230'}
 let s:voidBlue = {'gui': '#83A598', 'cterm256': '109'}
-let s:voidGreen = {'gui': '#98971A', 'cterm256': '71'}
+let s:voidGreen = {'gui': '#98971A', 'cterm256': '64'}
 let s:voidGold = {'gui': '#D79921', 'cterm256': '136'}
-let s:voidRed1 = {'gui': '#9D0006', 'cterm256': '1'}
+let s:voidRed1 = {'gui': '#9D0006', 'cterm256': '124'}
 let s:voidRed2 = {'gui': '#CC241D', 'cterm256': '196'}
 let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 
@@ -57,6 +58,7 @@ if s:is_dark
     let s:voidFg = s:voidCream2
     let s:voidBg = s:voidBlack1
     let s:voidBg2 = s:voidGray1  " used for cursor line etc.
+    let s:voidBg3 = s:voidBlack1 " sign
     let s:voidShade1 = s:voidGray1
     let s:voidShade2 = s:voidGray2
     let s:voidShade3 = s:voidGray3
@@ -65,13 +67,14 @@ else
     let s:voidFg = s:voidBlack1
     let s:voidBg = s:voidCream1
     let s:voidBg2 = s:voidGray8  " used for cursor line etc
+    let s:voidBg3 = s:voidCream1 " sign
     let s:voidShade1 = s:voidCream2
     let s:voidShade2 = s:voidGray6
     let s:voidShade3 = s:voidGray4
     let s:voidShade4 = s:voidGray7
 
     " some colors must be darker to be visible on light background
-    let s:voidBlue = {'gui': '#076678', 'cterm256': '109'}
+    let s:voidBlue = {'gui': '#5F87AF', 'cterm256': '67'}
     let s:voidGold = {'gui': '#B57614', 'cterm256': '136'}
 endif
 
@@ -96,7 +99,7 @@ call <sid>hi('Normal', s:voidFg, s:voidBg, 'none')
 call <sid>hi('Pmenu', s:voidBg, s:voidShade4, 'none')
 call <sid>hi('PmenuSel', s:none, s:voidShade2, 'none')
 call <sid>hi('Search', s:voidBg, s:voidBlue, 'none')
-call <sid>hi('SignColumn', s:none, s:voidBg, 'none')
+call <sid>hi('SignColumn', s:none, s:voidBg3, 'bold')
 call <sid>hi('StatusLine', s:voidBg, s:voidFg, 'none')
 call <sid>hi('StatusLineNC', s:voidShade3, s:voidBg, 'none')
 call <sid>hi('VertSplit', s:voidShade3, s:none, 'none')
@@ -287,9 +290,18 @@ call <sid>hi('yamlKey', s:voidFg, s:none, 'none')
 " Plugins
 " ------------
 
+" Dirvish
+call <sid>hi('DirvishPathTail', s:voidBlue, s:none, 'none')
+call <sid>hi('DirvishArg', s:voidFg, s:none, 'none')
+
 " Fugitive
 call <sid>hi('fugitiveHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveUntrackedHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveUnstagedHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveStagedHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveSymbolicRef', s:voidShade4, s:none, 'none')
+
+" Signify
+call <sid>hi('SignifySignAdd', s:voidGreen, s:voidBg3, 'bold')
+call <sid>hi('SignifySignChange', s:voidBlue, s:voidBg3, 'bold')
+call <sid>hi('SignifySignDelete', s:voidRed2, s:voidBg3, 'bold')
