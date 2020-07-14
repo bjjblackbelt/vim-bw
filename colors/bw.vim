@@ -254,6 +254,7 @@ call <sid>hi('ledgerTransactionMetadata', s:voidShade3, s:none, 'none')
 
 " Mail
 call <sid>hi('mailHeaderKey', s:voidShade4, s:none, 'none')
+call <sid>hi('mailHeader', s:voidShade4, s:none, 'none')
 
 " Make
 call <sid>hi('makeTarget', s:voidFg, s:none, 'bold')
