@@ -265,7 +265,8 @@ call <sid>hi('mkdFootnotes', s:voidShade3, s:none, 'underline')
 call <sid>hi('mkdLinkDef', s:voidShade3, s:none, 'none')
 call <sid>hi('mkdCode', s:voidShade4, s:none, 'none')
 call <sid>hi('mkdHeading', s:voidFg, s:none, 'bold')
-call <sid>hi('mkdLineBreak', s:none, s:voidRed2, 'bold')
+call <sid>hi('mkdLineBreak', s:none, s:voidRed2, 'none')
+call <sid>hi('mkdInlineURL', s:voidFg, s:none, 'underline')
 
 " Python
 call <sid>hi('pythonImport', s:voidFg, s:none, 'none')
