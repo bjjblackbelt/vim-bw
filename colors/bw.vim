@@ -273,6 +273,11 @@ call <sid>hi('pythonImport', s:voidFg, s:none, 'none')
 call <sid>hi('pythonConditional', s:voidFg, s:none, 'bold')
 call <sid>hi('pythonStrFormat', s:voidShade4, s:none, 'bold')
 
+" Quickfix
+call <sid>hi('qfError', s:voidCream2, s:voidRed2, 'bold')
+call <sid>hi('qfFileName', s:voidShade3, s:none, 'none')
+call <sid>hi('qfLineNr', s:voidShade3, s:none, 'italic')
+
 " SH
 call <sid>hi('shShebang', s:voidShade3, s:none, 'italic')
 call <sid>hi('shConditional', s:voidFg, s:none, 'bold')
