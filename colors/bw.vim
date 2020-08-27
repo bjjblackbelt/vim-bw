@@ -273,6 +273,7 @@ call <sid>hi('orgTodo', s:voidShade4, s:none, 'bold')
 call <sid>hi('orgTag', s:voidShade4, s:none, 'none')
 call <sid>hi('orgOption', s:voidShade3, s:none, 'none')
 call <sid>hi('orgBlockDelimiter', s:voidShade3, s:none, 'none')
+call <sid>hi('orgCode', s:voidFg, s:none, 'none')
 
 " Python
 call <sid>hi('pythonImport', s:voidFg, s:none, 'none')
