@@ -285,6 +285,12 @@ call <sid>hi('qfError', s:voidCream2, s:voidRed2, 'bold')
 call <sid>hi('qfFileName', s:voidShade3, s:none, 'none')
 call <sid>hi('qfLineNr', s:voidShade3, s:none, 'italic')
 
+" Rust
+call <sid>hi('rustEnumVariant', s:voidFg, s:none, 'bold')
+call <sid>hi('rustKeyword', s:voidFg, s:none, 'bold')
+call <sid>hi('rustStorage', s:voidFg, s:none, 'bold')
+call <sid>hi('rustStructure', s:voidFg, s:none, 'bold')
+
 " SH
 call <sid>hi('shShebang', s:voidShade3, s:none, 'italic')
 call <sid>hi('shConditional', s:voidFg, s:none, 'bold')
