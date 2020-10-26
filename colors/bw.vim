@@ -286,8 +286,9 @@ call <sid>hi('qfFileName', s:voidShade3, s:none, 'none')
 call <sid>hi('qfLineNr', s:voidShade3, s:none, 'italic')
 
 " Rust
-call <sid>hi('rustEnumVariant', s:voidFg, s:none, 'bold')
+call <sid>hi('rustConditional', s:voidFg, s:none, 'bold')
 call <sid>hi('rustKeyword', s:voidFg, s:none, 'bold')
+call <sid>hi('rustRepeat', s:voidFg, s:none, 'bold')
 call <sid>hi('rustStorage', s:voidFg, s:none, 'bold')
 call <sid>hi('rustStructure', s:voidFg, s:none, 'bold')
 
