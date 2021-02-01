@@ -3,6 +3,7 @@
 "
 " This theme is based on Fogbell by Jared Gorski, which is available
 " here: https://github.com/jaredgorski/fogbell
+" Also on onedark.vim: https://github.com/joshdick/onedark.vim
 
 scriptencoding utf-8
 hi clear
@@ -73,8 +74,8 @@ call <sid>hi('IncSearch', s:voidBg, s:voidGold, 'none')
 call <sid>hi('LineNr', s:voidShade3, s:voidBg, 'none')
 call <sid>hi('MatchParen', s:none, s:voidShade2, 'bold')
 call <sid>hi('Normal', s:voidFg, s:voidBg, 'none')
-call <sid>hi('Pmenu', s:voidBg, s:voidShade4, 'none')
-call <sid>hi('PmenuSel', s:none, s:voidShade2, 'none')
+call <sid>hi('Pmenu', s:voidFg, s:voidShade2, 'none')
+call <sid>hi('PmenuSel', s:none, s:voidShade1, 'none')
 call <sid>hi('Search', s:voidBg, s:voidGold, 'none')
 call <sid>hi('SignColumn', s:none, s:voidBg3, 'bold')
 call <sid>hi('StatusLine', s:voidBg, s:voidFg, 'none')
