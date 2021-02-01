@@ -42,8 +42,8 @@ let s:voidCream2 = {'gui': '#ABB2BF', 'cterm256': '230'}
 let s:voidBlue = {'gui': '#61AFEF', 'cterm256': '109'}
 let s:voidGreen = {'gui': '#98C379', 'cterm256': '64'}
 let s:voidGold = {'gui': '#E5C07B', 'cterm256': '136'}
-let s:voidRed1 = {'gui': '#E06C75', 'cterm256': '124'}
-let s:voidRed2 = {'gui': '#BE5046', 'cterm256': '196'}
+let s:voidRed1 = {'gui': '#BE5046', 'cterm256': '124'}
+let s:voidRed2 = {'gui': '#E06C75', 'cterm256': '196'}
 let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 
 let s:voidFg = s:voidCream2
