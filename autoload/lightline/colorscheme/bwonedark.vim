@@ -1,5 +1,5 @@
 " =============================================================================
-" Filename: autoload/lightline/colorscheme/bw.vim
+" Filename: autoload/lightline/colorscheme/bwonedark.vim
 " Author: Michał Góral
 " License: MIT License
 " =============================================================================
@@ -24,7 +24,7 @@ let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': 
 
 let s:fg = s:black1
 let s:dimfg = s:gray3
-let s:dimbg = s:black2
+let s:dimbg = s:gray1
 let s:tabselfg = s:cream2
 let s:tabselbg = s:gray1
 
@@ -36,9 +36,9 @@ let s:p.inactive.left   = [[s:dimfg,  s:dimbg], [s:dimfg, s:dimbg]]
 let s:p.inactive.middle = [[s:dimfg, s:dimbg]]
 let s:p.inactive.right  = [[s:dimfg, s:dimbg]]
 
-let s:p.normal.left    = [[s:fg, s:shade1, 'bold'], [s:dimfg, s:dimbg]]
+let s:p.normal.left    = [[s:fg, s:shade1, 'bold'], [s:shade1, s:dimbg]]
 let s:p.normal.middle  = [[s:dimfg, s:dimbg]]
-let s:p.normal.right   = [[s:fg, s:shade1, 'bold'], [s:fg, s:shade2]]
+let s:p.normal.right   = [[s:fg, s:shade1, 'bold'], [s:fg, s:gray2]]
 let s:p.normal.error   = [[s:red2, s:fg, 'bold']]
 let s:p.normal.warning = [[s:gold, s:fg]]
 
@@ -46,9 +46,9 @@ let s:p.insert.left    = [[s:fg, s:green, 'bold'], [s:dimfg, s:dimbg]]
 let s:p.replace.left    = [[s:fg, s:red2, 'bold'], [s:dimfg, s:dimbg]]
 let s:p.visual.left    = [[s:fg, s:purple, 'bold'], [s:dimfg, s:dimbg]]
 
-let s:p.tabline.left   = [[s:fg, s:shade2]]
-let s:p.tabline.middle = [[s:fg, s:shade3]]
-let s:p.tabline.right  = [[s:fg, s:shade2, 'bold'], [s:fg, s:shade2]]
+let s:p.tabline.left   = [[s:fg, s:shade1]]
+let s:p.tabline.middle = [[s:fg, s:dimbg]]
+let s:p.tabline.right  = [[s:fg, s:shade1, 'bold'], [s:fg, s:shade2]]
 let s:p.tabline.tabsel = [[s:tabselfg, s:tabselbg, 'bold']]
 
-let g:lightline#colorscheme#bw#palette = lightline#colorscheme#flatten(s:p)
+let g:lightline#colorscheme#bwonedark#palette = lightline#colorscheme#flatten(s:p)
