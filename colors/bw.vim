@@ -269,7 +269,8 @@ call <sid>hi('mkdLineBreak', s:none, s:voidRed2, 'none')
 call <sid>hi('mkdInlineURL', s:voidFg, s:none, 'underline')
 
 " org-mode
-call <sid>hi('orgTodo', s:voidShade4, s:none, 'bold')
+call <sid>hi('orgTodo', s:voidGreen, s:none, 'none')
+call <sid>hi('orgDone', s:voidShade3, s:none, 'none')
 call <sid>hi('orgTag', s:voidShade4, s:none, 'none')
 call <sid>hi('orgOption', s:voidShade3, s:none, 'none')
 call <sid>hi('orgBlockDelimiter', s:voidShade3, s:none, 'none')

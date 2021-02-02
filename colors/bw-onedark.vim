@@ -118,7 +118,7 @@ call <sid>hi('Title', s:voidFg, s:none, 'bold')
 call <sid>hi('Todo', s:voidShade3, s:none, 'inverse,bold')
 call <sid>hi('Type', s:none, s:none, 'none')
 call <sid>hi('Underlined', s:none, s:none, 'underline')
-call <sid>hi('WarningMsg', s:voidCream2, s:voidRed1, 'none')
+call <sid>hi('WarningMsg', s:voidBlack1, s:voidRed2, 'none')
 
 " Diff Mode
 if &diff
@@ -248,6 +248,7 @@ call <sid>hi('mkdInlineURL', s:voidFg, s:none, 'underline')
 
 " org-mode
 call <sid>hi('orgTodo', s:voidGreen, s:none, 'none')
+call <sid>hi('orgDone', s:voidShade3, s:none, 'none')
 call <sid>hi('orgTag', s:voidShade4, s:none, 'none')
 call <sid>hi('orgOption', s:voidShade3, s:none, 'none')
 call <sid>hi('orgBlockDelimiter', s:voidShade3, s:none, 'none')
