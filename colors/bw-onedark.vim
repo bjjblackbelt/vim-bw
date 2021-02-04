@@ -120,6 +120,7 @@ call <sid>hi('Todo', s:voidShade3, s:none, 'inverse,bold')
 call <sid>hi('Type', s:none, s:none, 'none')
 call <sid>hi('Underlined', s:none, s:none, 'underline')
 call <sid>hi('WarningMsg', s:voidBlack1, s:voidRed2, 'none')
+call <sid>hi('WildMenu', s:voidBlack1, s:voidBlue, 'none')
 
 " Diff Mode
 if &diff
