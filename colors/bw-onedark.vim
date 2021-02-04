@@ -317,6 +317,7 @@ call <sid>hi('fugitiveUntrackedHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveUnstagedHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveStagedHeading', s:voidFg, s:none, 'bold')
 call <sid>hi('fugitiveSymbolicRef', s:voidShade4, s:none, 'none')
+call <sid>hi('fugitiveStagedModifier', s:voidGreen, s:none, 'none')
 
 " Signify
 call <sid>hi('SignifySignAdd', s:voidGreen, s:voidBg3, 'bold')
