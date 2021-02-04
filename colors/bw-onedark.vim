@@ -105,6 +105,7 @@ call <sid>hi('NonText', s:voidShade3, s:none, 'none')
 call <sid>hi('Number', s:voidFg, s:none, 'none')
 call <sid>hi('Operator', s:voidFg, s:none, 'none')
 call <sid>hi('PreProc', s:voidFg, s:none, 'none')
+call <sid>hi('QuickFixLine', s:voidBlack1, s:voidGold, 'none')
 call <sid>hi('Special', s:voidFg, s:none, 'none')
 call <sid>hi('SpecialKey', s:voidFg, s:none, 'none')
 call <sid>hi('SpellBad', s:voidRed2, s:none, 'italic,undercurl')
@@ -260,7 +261,7 @@ call <sid>hi('pythonConditional', s:voidFg, s:none, 'bold')
 call <sid>hi('pythonStrFormat', s:voidShade4, s:none, 'bold')
 
 " Quickfix
-call <sid>hi('qfError', s:voidCream2, s:voidRed2, 'bold')
+call <sid>hi('qfError', s:voidBlack1, s:voidRed2, 'bold')
 call <sid>hi('qfFileName', s:voidShade3, s:none, 'none')
 call <sid>hi('qfLineNr', s:voidShade3, s:none, 'italic')
 
