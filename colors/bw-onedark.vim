@@ -122,18 +122,10 @@ call <sid>hi('Underlined', s:none, s:none, 'underline')
 call <sid>hi('WarningMsg', s:voidBlack1, s:voidRed2, 'none')
 call <sid>hi('WildMenu', s:voidBlack1, s:voidBlue, 'none')
 
-" Diff Mode
-if &diff
-  call <sid>hi('DiffAdd', s:voidBg, s:voidGreen, 'none')
-  call <sid>hi('DiffChange', s:voidBg, s:voidGold, 'none')
-  call <sid>hi('DiffDelete', s:voidRed2, s:voidRed1, 'none')
-  call <sid>hi('DiffText', s:voidBg, s:voidBlue, 'none')
-else
-  call <sid>hi('DiffAdd', s:voidGreen, s:none, 'none')
-  call <sid>hi('DiffChange', s:voidGold, s:none, 'none')
-  call <sid>hi('DiffDelete', s:voidRed2, s:none, 'none')
-  call <sid>hi('DiffText', s:voidBlue, s:none, 'none')
-endif
+call <sid>hi('DiffAdd', s:voidGreen, s:none, 'underline')
+call <sid>hi('DiffChange', s:voidGold, s:none, 'underline')
+call <sid>hi('DiffDelete', s:voidRed2, s:none, 'underline')
+call <sid>hi('DiffText', s:voidBlue, s:none, 'underline')
 
 " ------------
 " Languages
