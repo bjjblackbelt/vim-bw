@@ -127,6 +127,63 @@ call <sid>hi('DiffChange', s:voidGold, s:none, 'underline')
 call <sid>hi('DiffDelete', s:voidRed2, s:none, 'underline')
 call <sid>hi('DiffText', s:voidBlue, s:none, 'underline')
 
+" Neovim Treesitter
+call <sid>hi('TSError', s:voidRed2, s:none, 'none')
+call <sid>hi('TSPunctDelimiter', s:voidFg, s:none, 'none')
+call <sid>hi('TSPunctBracket', s:voidFg, s:none, 'none')
+call <sid>hi('TSPunctSpecial', s:voidFg, s:none, 'none')
+
+call <sid>hi('TSConstant', s:voidFg, s:none, 'none')
+call <sid>hi('TSConstBuiltin', s:voidFg, s:none, 'none')
+call <sid>hi('TSConstMacro', s:voidFg, s:none, 'none')
+call <sid>hi('TSStringRegex', s:voidShade4, s:none, 'none')
+call <sid>hi('TSString', s:voidShade4, s:none, 'none')
+call <sid>hi('TSStringEscape', s:voidShade4, s:none, 'none')
+call <sid>hi('TSCharacter', s:voidShade4, s:none, 'none')
+call <sid>hi('TSNumber', s:voidFg, s:none, 'none')
+call <sid>hi('TSBoolean', s:voidFg, s:none, 'none')
+call <sid>hi('TSFloat', s:voidFg, s:none, 'none')
+call <sid>hi('TSAnnotation', s:voidFg, s:none, 'none')
+call <sid>hi('TSAttribute', s:voidFg, s:none, 'none')
+call <sid>hi('TSNamespace', s:voidFg, s:none, 'none')
+
+call <sid>hi('TSFuncBuiltin', s:voidFg, s:none, 'none')
+call <sid>hi('TSFunction', s:voidFg, s:none, 'none')
+call <sid>hi('TSFuncMacro', s:voidFg, s:none, 'none')
+call <sid>hi('TSParameter', s:voidFg, s:none, 'none')
+call <sid>hi('TSParameterReference', s:voidFg, s:none, 'none')
+call <sid>hi('TSMethod', s:voidFg, s:none, 'none')
+call <sid>hi('TSField', s:voidFg, s:none, 'none')
+call <sid>hi('TSProperty', s:voidFg, s:none, 'none')
+call <sid>hi('TSConstructor', s:voidFg, s:none, 'none')
+
+call <sid>hi('TSConditional', s:voidFg, s:none, 'bold')
+call <sid>hi('TSRepeat', s:voidFg, s:none, 'none')
+call <sid>hi('TSLabel', s:voidFg, s:none, 'none')
+call <sid>hi('TSKeyword', s:voidFg, s:none, 'bold')
+call <sid>hi('TSKeywordFunction', s:voidFg, s:none, 'bold')
+call <sid>hi('TSKeywordOperator', s:voidFg, s:none, 'none')
+call <sid>hi('TSOperator', s:voidFg, s:none, 'none')
+call <sid>hi('TSException', s:voidFg, s:none, 'none')
+call <sid>hi('TSType', s:voidFg, s:none, 'none')
+call <sid>hi('TSTypeBuiltin', s:voidFg, s:none, 'none')
+call <sid>hi('TSStructure', s:voidFg, s:none, 'none')
+call <sid>hi('TSInclude', s:voidFg, s:none, 'none')
+
+call <sid>hi('TSVariable', s:voidFg, s:none, 'none')
+call <sid>hi('TSVariableBuiltin', s:voidFg, s:none, 'none')
+
+call <sid>hi('TSText', s:voidFg, s:none, 'none')
+call <sid>hi('TSStrong', s:voidFg, s:none, 'bold')
+call <sid>hi('TSEmphasis', s:voidFg, s:none, 'italic')
+call <sid>hi('TSUnderline', s:voidFg, s:none, 'underline')
+call <sid>hi('TSTitle', s:voidFg, s:none, 'none')
+call <sid>hi('TSLiteral', s:voidFg, s:none, 'none')
+call <sid>hi('TSURI', s:voidBlue, s:none, 'none')
+
+call <sid>hi('TSTag', s:voidFg, s:none, 'none')
+call <sid>hi('TSTagDelimiter', s:voidFg, s:none, 'none')
+
 " ------------
 " Languages
 " ------------
