@@ -272,6 +272,8 @@ call <sid>hi('htmlTag', s:voidFg, s:none, 'none')
 call <sid>hi('htmlTagName', s:voidFg, s:none, 'none')
 call <sid>hi('htmlItalic', s:voidFg, s:none, 'italic')
 call <sid>hi('htmlBold', s:voidFg, s:none, 'bold')
+call <sid>hi('htmlH1', s:voidGold, s:none, 'bold')
+call <sid>hi('htmlH2', s:voidGold, s:none, 'bold')
 
 " Ledger
 call <sid>hi('ledgerAmount', s:voidFg, s:none, 'italic')
