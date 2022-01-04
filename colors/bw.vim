@@ -289,8 +289,6 @@ call <sid>hi('htmlTag', s:voidFg, s:none, 'none')
 call <sid>hi('htmlTagName', s:voidFg, s:none, 'none')
 call <sid>hi('htmlItalic', s:voidFg, s:none, 'italic')
 call <sid>hi('htmlBold', s:voidFg, s:none, 'bold')
-call <sid>hi('htmlH1', s:voidGold, s:none, 'bold')
-call <sid>hi('htmlH2', s:voidGold, s:none, 'bold')
 
 " Ledger
 call <sid>hi('ledgerAmount', s:voidFg, s:none, 'italic')
@@ -313,7 +311,7 @@ call <sid>hi('makeSpecTarget', s:voidFg, s:none, 'none')
 call <sid>hi('mkdFootnotes', s:voidShade3, s:none, 'underline')
 call <sid>hi('mkdLinkDef', s:voidShade3, s:none, 'none')
 call <sid>hi('mkdCode', s:voidShade4, s:none, 'none')
-call <sid>hi('mkdHeading', s:voidFg, s:none, 'bold')
+call <sid>hi('mkdHeading', s:voidGold, s:none, 'bold')
 call <sid>hi('mkdLineBreak', s:none, s:voidRed2, 'none')
 call <sid>hi('mkdInlineURL', s:voidFg, s:none, 'underline')
 
