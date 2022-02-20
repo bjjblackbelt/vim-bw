@@ -323,6 +323,19 @@ call <sid>hi('orgOption', s:voidShade3, s:none, 'none')
 call <sid>hi('orgBlockDelimiter', s:voidShade3, s:none, 'none')
 call <sid>hi('orgCode', s:voidFg, s:none, 'none')
 
+" orgmode.nvim
+call <sid>hi('OrgTSHeadlineLevel1', s:voidFg, s:none, 'bold')
+call <sid>hi('OrgTSHeadlineLevel2', s:voidFg, s:none, 'bold')
+call <sid>hi('OrgTSHeadlineLevel3', s:voidFg, s:none, 'bold')
+call <sid>hi('OrgTSComment', s:voidShade3, s:none, 'none')
+call <sid>hi('OrgTSTag', s:voidShade4, s:none, 'none')
+call <sid>hi('OrgTSTimestampActive', s:voidShade4, s:none, 'none')
+call <sid>hi('OrgTSPropertyDrawer', s:voidShade3, s:none, 'none')
+call <sid>hi('OrgTSDirective', s:voidShade3, s:none, 'none')
+call <sid>hi('OrgTSCheckboxChecked', s:voidShade3, s:none, 'none')
+call <sid>hi('OrgTSCheckboxHalfChecked', s:voidShade4, s:none, 'none')
+call <sid>hi('OrgTSCheckboxUnchecked', s:voidShade4, s:none, 'none')
+
 " Python
 call <sid>hi('pythonImport', s:voidFg, s:none, 'none')
 call <sid>hi('pythonConditional', s:voidFg, s:none, 'bold')
