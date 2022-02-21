@@ -405,3 +405,6 @@ call <sid>hi('fugitiveStagedModifier', s:voidGreen, s:none, 'none')
 call <sid>hi('SignifySignAdd', s:voidGreen, s:voidBg3, 'bold')
 call <sid>hi('SignifySignChange', s:voidBlue, s:voidBg3, 'bold')
 call <sid>hi('SignifySignDelete', s:voidRed2, s:voidBg3, 'bold')
+
+" vim help
+call <sid>hi('helpHyperTextJump', s:voidBlue, s:none, 'none')
