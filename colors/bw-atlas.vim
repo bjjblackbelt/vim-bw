@@ -36,6 +36,7 @@ endfun
 let s:black = {'gui': '#212121', 'cterm256': '235'}
 let s:white = {'gui': '#c0c0c0', 'cterm256': '255'}
 let s:brightwhite = {'gui': '#ffffff', 'cterm256': '15'}
+let s:gray0 = {'gui': '#323232', 'cterm256': '236'}
 let s:gray1 = {'gui': '#444444', 'cterm256': '238'}
 let s:gray2 = {'gui': '#666666', 'cterm256': '242'}
 let s:gray3 = {'gui': '#999999', 'cterm256': '246'}
@@ -53,16 +54,16 @@ let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 "    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE)
 
 " Editor
-call <sid>hi('ColorColumn', s:none, s:black, 'none')
+call <sid>hi('ColorColumn', s:none, s:gray0, 'none')
 call <sid>hi('Cursor', s:black, s:white, 'none')
-call <sid>hi('CursorColumn', s:none, s:black, 'none')
-call <sid>hi('CursorLine', s:none, s:black, 'none')
+call <sid>hi('CursorColumn', s:none, s:gray0, 'none')
+call <sid>hi('CursorLine', s:none, s:gray0, 'none')
 call <sid>hi('CursorLineNr', s:white, s:black, 'bold')
 call <sid>hi('Directory', s:white, s:black, 'none')
 call <sid>hi('FoldColumn', s:none, s:black, 'none')
 call <sid>hi('Folded', s:gray2, s:none, 'none')
 call <sid>hi('IncSearch', s:black, s:brightwhite, 'underline,bold')
-call <sid>hi('LineNr', s:gray2, s:black, 'none')
+call <sid>hi('LineNr', s:gray1, s:black, 'none')
 call <sid>hi('MatchParen', s:red, s:none, 'bold')
 call <sid>hi('Normal', s:white, s:black, 'none')
 call <sid>hi('Pmenu', s:white, s:gray1, 'none')
