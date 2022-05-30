@@ -44,6 +44,7 @@ let s:blue = {'gui': '#61AFEF', 'cterm256': '39'}
 let s:green = {'gui': '#98C379', 'cterm256': '114'}
 let s:gold = {'gui': '#E5C07B', 'cterm256': '180'}
 let s:red = {'gui': '#E06C75', 'cterm256': '204'}
+let s:purple = {'gui': '#C678DD', 'cterm256': '170'}
 let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 
 " ==========================
@@ -75,7 +76,7 @@ call <sid>hi('Visual', s:none, s:medium_gray, 'none')
 
 " General
 call <sid>hi('Boolean', s:white, s:none, 'none')
-call <sid>hi('Character', s:white, s:none, 'none')
+call <sid>hi('Character', s:bright_white, s:none, 'none')
 call <sid>hi('Comment', s:dark_gray, s:none, 'italic')
 call <sid>hi('Conceal', s:bright_white, s:none, 'none')
 call <sid>hi('Conditional', s:white, s:none, 'none')
@@ -381,3 +382,24 @@ call <sid>hi('SignifySignDelete', s:red, s:black, 'bold')
 
 " vim help
 call <sid>hi('helpHyperTextJump', s:blue, s:none, 'none')
+
+" terminal
+
+let g:terminal_color_foreground = s:green["gui"]
+let g:terminal_color_background = s:black["gui"]
+let g:terminal_color_0 = s:black["gui"]
+let g:terminal_color_1 = s:red["gui"]
+let g:terminal_color_2 = s:green["gui"]
+let g:terminal_color_3 = s:gold["gui"]
+let g:terminal_color_4 = s:blue["gui"]
+let g:terminal_color_5 = s:purple["gui"]
+let g:terminal_color_6 = s:blue["gui"]
+let g:terminal_color_7 = s:medium_gray["gui"]
+let g:terminal_color_8 = s:gray["gui"]
+let g:terminal_color_9 = s:red["gui"]
+let g:terminal_color_10 = s:green["gui"]
+let g:terminal_color_11 = s:gold["gui"]
+let g:terminal_color_12 = s:blue["gui"]
+let g:terminal_color_13 = s:purple["gui"]
+let g:terminal_color_14 = s:blue["gui"]
+let g:terminal_color_15 = s:bright_white["gui"]
