@@ -36,10 +36,11 @@ endfun
 
 let s:black = {'gui': '#282c34', 'cterm256': '235'}
 let s:white = {'gui': '#ABB2BF', 'cterm256': '145'}
+let s:light_white = {'gui': '#dbdcdf', 'cterm256': '248'}
 let s:gray = {'gui': '#2C323C', 'cterm256': '236'}
 let s:medium_gray = {'gui': '#4B5263', 'cterm256': '238'}
 let s:dark_gray = {'gui': '#5C6370', 'cterm256': '59'}
-let s:bright_white = {'gui': '#ECEFF4', 'cterm256': '242'}
+let s:bright_white = {'gui': '#ECEFF4', 'cterm256': '252'}
 let s:blue = {'gui': '#61AFEF', 'cterm256': '39'}
 let s:green = {'gui': '#98C379', 'cterm256': '114'}
 let s:gold = {'gui': '#E5C07B', 'cterm256': '180'}
@@ -78,7 +79,7 @@ call <sid>hi('Visual', s:none, s:medium_gray, 'none')
 call <sid>hi('Boolean', s:white, s:none, 'none')
 call <sid>hi('Character', s:bright_white, s:none, 'none')
 call <sid>hi('Comment', s:dark_gray, s:none, 'italic')
-call <sid>hi('Conceal', s:bright_white, s:none, 'none')
+call <sid>hi('Conceal', s:white, s:none, 'none')
 call <sid>hi('Conditional', s:white, s:none, 'none')
 call <sid>hi('Constant', s:white, s:none, 'none')
 call <sid>hi('Define', s:white, s:none, 'none')
@@ -106,7 +107,7 @@ call <sid>hi('Statement', s:white, s:none, 'bold')
 call <sid>hi('StorageClass', s:white, s:none, 'none')
 call <sid>hi('String', s:bright_white, s:none, 'none')
 call <sid>hi('Tag', s:white, s:none, 'none')
-call <sid>hi('Title', s:white, s:none, 'bold')
+call <sid>hi('Title', s:bright_white, s:none, 'bold')
 call <sid>hi('Todo', s:dark_gray, s:none, 'inverse,bold')
 call <sid>hi('Type', s:none, s:none, 'none')
 call <sid>hi('Underlined', s:none, s:none, 'underline')
@@ -169,7 +170,7 @@ call <sid>hi('TSText', s:white, s:none, 'none')
 call <sid>hi('TSStrong', s:white, s:none, 'bold')
 call <sid>hi('TSEmphasis', s:white, s:none, 'italic')
 call <sid>hi('TSUnderline', s:white, s:none, 'underline')
-call <sid>hi('TSTitle', s:white, s:none, 'none')
+call <sid>hi('TSTitle', s:bright_white, s:none, 'none')
 call <sid>hi('TSLiteral', s:white, s:none, 'none')
 call <sid>hi('TSURI', s:blue, s:none, 'none')
 
@@ -200,19 +201,17 @@ call <sid>hi('asciidocURL', s:white, s:none, 'underline')
 
 " Asciidoctor
 call <sid>hi('asciidoctorAnchor', s:blue, s:none, 'underline')
-call <sid>hi('asciidoctorBlock', s:dark_gray, s:none, 'none')
+call <sid>hi('asciidoctorBlock', s:medium_gray, s:none, 'none')
 call <sid>hi('asciidoctorBlockOptions', s:dark_gray, s:none, 'none')
 call <sid>hi('asciidoctorBold', s:white, s:none, 'bold')
-call <sid>hi('asciidoctorCode', s:bright_white, s:none, 'none')
-call <sid>hi('asciidoctorExampleBlock', s:bright_white, s:none, 'none')
+call <sid>hi('asciidoctorCode', s:light_white, s:none, 'none')
 call <sid>hi('asciidoctorFile', s:bright_white, s:none, 'none')
 call <sid>hi('asciidoctorItalic', s:white, s:none, 'italic')
 call <sid>hi('asciidoctorListContinuation', s:medium_gray, s:none, 'none')
 call <sid>hi('asciidoctorListMarker', s:bright_white, s:none, 'none')
-call <sid>hi('asciidoctorListingBlock', s:bright_white, s:none, 'none')
 call <sid>hi('asciidoctorLiteralBlock', s:bright_white, s:none, 'none')
 call <sid>hi('asciidoctorOption', s:dark_gray, s:none, 'none')
-call <sid>hi('asciidoctorSourceBlock', s:bright_white, s:none, 'none')
+call <sid>hi('asciidoctorSourceBlock', s:light_white, s:none, 'none')
 call <sid>hi('asciidoctorUrlDescription', s:white, s:none, 'none')
 
 " C
