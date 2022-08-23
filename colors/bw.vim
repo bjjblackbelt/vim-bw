@@ -34,6 +34,7 @@ endfun
 let s:is_dark=(&background == 'dark')
 
 let s:voidBlack = {'gui': '#282828', 'cterm256': '235'}
+let s:voidGray0 = {'gui': '#3C3836', 'cterm256': '238'}
 let s:voidGray1 = {'gui': '#504945', 'cterm256': '239'}
 let s:voidGray2 = {'gui': '#665C64', 'cterm256': '240'}
 let s:voidGray3 = {'gui': '#928374', 'cterm256': '241'}
@@ -52,11 +53,11 @@ let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 "    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE)
 
 " Editor
-call <sid>hi('ColorColumn', s:none, s:voidGray1, 'none')
+call <sid>hi('ColorColumn', s:none, s:voidGray0, 'none')
 call <sid>hi('Cursor', s:voidBlack, s:voidCream, 'none')
-call <sid>hi('CursorColumn', s:none, s:voidGray1, 'none')
-call <sid>hi('CursorLine', s:none, s:voidGray1, 'none')
-call <sid>hi('CursorLineNr', s:voidCream, s:voidGray1, 'bold')
+call <sid>hi('CursorColumn', s:none, s:voidGray0, 'none')
+call <sid>hi('CursorLine', s:none, s:voidGray0, 'none')
+call <sid>hi('CursorLineNr', s:voidCream, s:voidGray0, 'bold')
 call <sid>hi('Directory', s:voidCream, s:voidBlack, 'none')
 call <sid>hi('FoldColumn', s:none, s:voidBlack, 'none')
 call <sid>hi('Folded', s:voidGray3, s:none, 'none')
@@ -68,8 +69,8 @@ call <sid>hi('Pmenu', s:voidBlack, s:voidGray4, 'none')
 call <sid>hi('PmenuSel', s:none, s:voidGray2, 'none')
 call <sid>hi('Search', s:voidBlack, s:voidGold, 'none')
 call <sid>hi('SignColumn', s:none, s:voidBlack, 'bold')
-call <sid>hi('StatusLine', s:voidBlack, s:voidGray1, 'none')
-call <sid>hi('StatusLineNC', s:voidGray3, s:voidGray1, 'none')
+call <sid>hi('StatusLine', s:voidCream, s:voidGray0, 'none')
+call <sid>hi('StatusLineNC', s:voidGray3, s:voidGray0, 'none')
 call <sid>hi('VertSplit', s:voidGray3, s:none, 'none')
 call <sid>hi('Visual', s:none, s:voidGray2, 'none')
 
