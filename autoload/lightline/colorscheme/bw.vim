@@ -27,28 +27,15 @@ let s:gold = ['#D79921', 136]
 
 let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': {}}
 
-if lightline#colorscheme#background() ==# 'dark'
-    let s:fg = s:black1
-    let s:dimfg = s:gray3
-    let s:dimbg = s:black2
-    let s:tabselfg = s:cream2
-    let s:tabselbg = s:gray1
+let s:fg = s:black1
+let s:dimfg = s:gray3
+let s:dimbg = s:black2
+let s:tabselfg = s:cream2
+let s:tabselbg = s:gray1
 
-    let s:shade1 = s:gray3
-    let s:shade2 = s:gray4
-    let s:shade3 = s:gray1
-else
-    let s:fg = s:black1
-    let s:dimfg = s:gray1
-    let s:dimbg = s:gray8
-    let s:tabselfg = s:black1
-    let s:tabselbg = s:gray6
-
-    let s:shade1 = s:gray6
-    let s:shade2 = s:gray5
-    let s:shade3 = s:gray7
-endif
-
+let s:shade1 = s:gray3
+let s:shade2 = s:gray4
+let s:shade3 = s:gray1
 
 let s:p.inactive.left   = [[s:dimfg,  s:dimbg], [s:dimfg, s:dimbg]]
 let s:p.inactive.middle = [[s:dimfg, s:dimbg]]

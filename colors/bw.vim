@@ -1,8 +1,6 @@
 " bw.vim
 " By Michał Góral
 "
-" This theme is based on Fogbell by Jared Gorski, which is available
-" here: https://github.com/jaredgorski/fogbell
 
 scriptencoding utf-8
 hi clear
@@ -35,18 +33,12 @@ endfun
 
 let s:is_dark=(&background == 'dark')
 
-let s:voidBlack1 = {'gui': '#282828', 'cterm256': '235'}
-let s:voidBlack2 = {'gui': '#3A3A3A', 'cterm256': '237'}
+let s:voidBlack = {'gui': '#282828', 'cterm256': '235'}
 let s:voidGray1 = {'gui': '#504945', 'cterm256': '239'}
 let s:voidGray2 = {'gui': '#665C64', 'cterm256': '240'}
 let s:voidGray3 = {'gui': '#928374', 'cterm256': '241'}
 let s:voidGray4 = {'gui': '#A89984', 'cterm256': '242'}
-let s:voidGray5 = {'gui': '#D0D0D0', 'cterm256': '252'}
-let s:voidGray6 = {'gui': '#B0B0B0', 'cterm256': '249'}
-let s:voidGray7 = {'gui': '#797974', 'cterm256': '243'}
-let s:voidGray8 = {'gui': '#EBEBEB', 'cterm256': '254'}
-let s:voidCream1 = {'gui': '#F3F3EF', 'cterm256': '255'}
-let s:voidCream2 = {'gui': '#EBDBB2', 'cterm256': '230'}
+let s:voidCream = {'gui': '#EBDBB2', 'cterm256': '230'}
 let s:voidBlue = {'gui': '#83A598', 'cterm256': '109'}
 let s:voidGreen = {'gui': '#98971A', 'cterm256': '64'}
 let s:voidGold = {'gui': '#D79921', 'cterm256': '136'}
@@ -54,322 +46,298 @@ let s:voidRed1 = {'gui': '#9D0006', 'cterm256': '124'}
 let s:voidRed2 = {'gui': '#CC241D', 'cterm256': '196'}
 let s:none = {'gui': 'NONE', 'cterm256': 'NONE'}
 
-if s:is_dark
-    let s:voidFg = s:voidCream2
-    let s:voidBg = s:voidBlack1
-    let s:voidBg2 = s:voidGray1  " used for cursor line etc.
-    let s:voidBg3 = s:voidBlack1 " sign
-    let s:voidShade1 = s:voidGray1
-    let s:voidShade2 = s:voidGray2
-    let s:voidShade3 = s:voidGray3
-    let s:voidShade4 = s:voidGray4
-else
-    let s:voidFg = s:voidBlack1
-    let s:voidBg = s:voidCream1
-    let s:voidBg2 = s:voidGray8  " used for cursor line etc
-    let s:voidBg3 = s:voidCream1 " sign
-    let s:voidShade1 = s:voidCream2
-    let s:voidShade2 = s:voidGray6
-    let s:voidShade3 = s:voidGray4
-    let s:voidShade4 = s:voidGray7
-
-    " some colors must be darker to be visible on light background
-    let s:voidBlue = {'gui': '#5F87AF', 'cterm256': '67'}
-    let s:voidGold = {'gui': '#B57614', 'cterm256': '136'}
-endif
-
 " ==========================
 " Definitions
 " ==========================
 "    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE)
 
 " Editor
-call <sid>hi('ColorColumn', s:none, s:voidBg2, 'none')
-call <sid>hi('Cursor', s:voidBg, s:voidFg, 'none')
-call <sid>hi('CursorColumn', s:none, s:voidBg2, 'none')
-call <sid>hi('CursorLine', s:none, s:voidBg2, 'none')
-call <sid>hi('CursorLineNr', s:voidFg, s:voidBg2, 'bold')
-call <sid>hi('Directory', s:voidFg, s:voidBg, 'none')
-call <sid>hi('FoldColumn', s:none, s:voidBg, 'none')
-call <sid>hi('Folded', s:voidShade3, s:none, 'none')
-call <sid>hi('IncSearch', s:voidBg, s:voidGold, 'none')
-call <sid>hi('LineNr', s:voidShade3, s:voidBg, 'none')
-call <sid>hi('MatchParen', s:none, s:voidShade2, 'bold')
-call <sid>hi('Normal', s:voidFg, s:voidBg, 'none')
-call <sid>hi('Pmenu', s:voidBg, s:voidShade4, 'none')
-call <sid>hi('PmenuSel', s:none, s:voidShade2, 'none')
-call <sid>hi('Search', s:voidBg, s:voidGold, 'none')
-call <sid>hi('SignColumn', s:none, s:voidBg3, 'bold')
-call <sid>hi('StatusLine', s:voidBg, s:voidBg2, 'none')
-call <sid>hi('StatusLineNC', s:voidShade3, s:voidBg2, 'none')
-call <sid>hi('VertSplit', s:voidShade3, s:none, 'none')
-call <sid>hi('Visual', s:none, s:voidShade2, 'none')
+call <sid>hi('ColorColumn', s:none, s:voidGray1, 'none')
+call <sid>hi('Cursor', s:voidBlack, s:voidCream, 'none')
+call <sid>hi('CursorColumn', s:none, s:voidGray1, 'none')
+call <sid>hi('CursorLine', s:none, s:voidGray1, 'none')
+call <sid>hi('CursorLineNr', s:voidCream, s:voidGray1, 'bold')
+call <sid>hi('Directory', s:voidCream, s:voidBlack, 'none')
+call <sid>hi('FoldColumn', s:none, s:voidBlack, 'none')
+call <sid>hi('Folded', s:voidGray3, s:none, 'none')
+call <sid>hi('IncSearch', s:voidBlack, s:voidGold, 'none')
+call <sid>hi('LineNr', s:voidGray3, s:voidBlack, 'none')
+call <sid>hi('MatchParen', s:none, s:voidGray2, 'bold')
+call <sid>hi('Normal', s:voidCream, s:voidBlack, 'none')
+call <sid>hi('Pmenu', s:voidBlack, s:voidGray4, 'none')
+call <sid>hi('PmenuSel', s:none, s:voidGray2, 'none')
+call <sid>hi('Search', s:voidBlack, s:voidGold, 'none')
+call <sid>hi('SignColumn', s:none, s:voidBlack, 'bold')
+call <sid>hi('StatusLine', s:voidBlack, s:voidGray1, 'none')
+call <sid>hi('StatusLineNC', s:voidGray3, s:voidGray1, 'none')
+call <sid>hi('VertSplit', s:voidGray3, s:none, 'none')
+call <sid>hi('Visual', s:none, s:voidGray2, 'none')
 
 " General
-call <sid>hi('Boolean', s:voidFg, s:none, 'none')
-call <sid>hi('Character', s:voidFg, s:none, 'none')
-call <sid>hi('Comment', s:voidShade3, s:none, 'none')
-call <sid>hi('Conceal', s:voidShade4, s:none, 'none')
-call <sid>hi('Conditional', s:voidFg, s:none, 'none')
-call <sid>hi('Constant', s:voidFg, s:none, 'none')
-call <sid>hi('Define', s:voidFg, s:none, 'none')
+call <sid>hi('Boolean', s:voidCream, s:none, 'none')
+call <sid>hi('Character', s:voidCream, s:none, 'none')
+call <sid>hi('Comment', s:voidGray3, s:none, 'none')
+call <sid>hi('Conceal', s:voidGray4, s:none, 'none')
+call <sid>hi('Conditional', s:voidCream, s:none, 'none')
+call <sid>hi('Constant', s:voidCream, s:none, 'none')
+call <sid>hi('Define', s:voidCream, s:none, 'none')
 call <sid>hi('DiffAdd', s:voidGreen, s:none, 'none')
 call <sid>hi('DiffChange', s:voidGold, s:none, 'none')
 call <sid>hi('DiffDelete', s:voidRed2, s:none, 'none')
 call <sid>hi('DiffText', s:voidBlue, s:none, 'none')
-call <sid>hi('ErrorMsg', s:voidCream2, s:voidRed1, 'none')
-call <sid>hi('Float', s:voidFg, s:none, 'none')
-call <sid>hi('Function', s:voidFg, s:none, 'none')
-call <sid>hi('Identifier', s:voidFg, s:none, 'none')
-call <sid>hi('Keyword', s:voidFg, s:none, 'none')
-call <sid>hi('Label', s:voidFg, s:none, 'none')
-call <sid>hi('NonText', s:voidShade3, s:none, 'none')
-call <sid>hi('Number', s:voidFg, s:none, 'none')
-call <sid>hi('Operator', s:voidFg, s:none, 'none')
-call <sid>hi('PreProc', s:voidFg, s:none, 'none')
-call <sid>hi('QuickFixLine', s:voidBlack1, s:voidGold, 'none')
-call <sid>hi('Special', s:voidFg, s:none, 'none')
-call <sid>hi('SpecialKey', s:voidFg, s:none, 'none')
+call <sid>hi('ErrorMsg', s:voidCream, s:voidRed1, 'none')
+call <sid>hi('Float', s:voidCream, s:none, 'none')
+call <sid>hi('Function', s:voidCream, s:none, 'none')
+call <sid>hi('Identifier', s:voidCream, s:none, 'none')
+call <sid>hi('Keyword', s:voidCream, s:none, 'none')
+call <sid>hi('Label', s:voidCream, s:none, 'none')
+call <sid>hi('NonText', s:voidGray3, s:none, 'none')
+call <sid>hi('Number', s:voidCream, s:none, 'none')
+call <sid>hi('Operator', s:voidCream, s:none, 'none')
+call <sid>hi('PreProc', s:voidCream, s:none, 'none')
+call <sid>hi('QuickFixLine', s:voidBlack, s:voidGold, 'none')
+call <sid>hi('Special', s:voidCream, s:none, 'none')
+call <sid>hi('SpecialKey', s:voidCream, s:none, 'none')
 call <sid>hi('SpellBad', s:voidRed2, s:none, 'italic,undercurl')
-call <sid>hi('SpellCap', s:voidFg, s:none, 'italic,undercurl')
-call <sid>hi('SpellLocal', s:voidFg, s:none, 'undercurl')
-call <sid>hi('Statement', s:voidFg, s:none, 'bold')
-call <sid>hi('StorageClass', s:voidFg, s:none, 'none')
-call <sid>hi('String', s:voidShade4, s:none, 'none')
-call <sid>hi('Tag', s:voidFg, s:none, 'none')
+call <sid>hi('SpellCap', s:voidCream, s:none, 'italic,undercurl')
+call <sid>hi('SpellLocal', s:voidCream, s:none, 'undercurl')
+call <sid>hi('Statement', s:voidCream, s:none, 'bold')
+call <sid>hi('StorageClass', s:voidCream, s:none, 'none')
+call <sid>hi('String', s:voidGray4, s:none, 'none')
+call <sid>hi('Tag', s:voidCream, s:none, 'none')
 call <sid>hi('Title', s:none, s:none, 'bold')
-call <sid>hi('Todo', s:voidShade3, s:none, 'inverse,bold')
+call <sid>hi('Todo', s:voidGray3, s:none, 'inverse,bold')
 call <sid>hi('Type', s:none, s:none, 'none')
 call <sid>hi('Underlined', s:none, s:none, 'underline')
-call <sid>hi('WarningMsg', s:voidCream2, s:voidRed1, 'none')
-call <sid>hi('WildMenu', s:voidBlack1, s:voidBlue, 'none')
+call <sid>hi('WarningMsg', s:voidCream, s:voidRed1, 'none')
+call <sid>hi('WildMenu', s:voidBlack, s:voidBlue, 'none')
 
 " Neovim Treesitter
 call <sid>hi('TSError', s:voidRed2, s:none, 'none')
-call <sid>hi('TSComment', s:voidShade3, s:none, 'none')
-call <sid>hi('TSPunctDelimiter', s:voidFg, s:none, 'none')
-call <sid>hi('TSPunctBracket', s:voidFg, s:none, 'none')
-call <sid>hi('TSPunctSpecial', s:voidFg, s:none, 'none')
+call <sid>hi('TSComment', s:voidGray3, s:none, 'none')
+call <sid>hi('TSPunctDelimiter', s:voidCream, s:none, 'none')
+call <sid>hi('TSPunctBracket', s:voidCream, s:none, 'none')
+call <sid>hi('TSPunctSpecial', s:voidCream, s:none, 'none')
 
-call <sid>hi('TSConstant', s:voidFg, s:none, 'none')
-call <sid>hi('TSConstBuiltin', s:voidFg, s:none, 'none')
-call <sid>hi('TSConstMacro', s:voidFg, s:none, 'none')
-call <sid>hi('TSStringRegex', s:voidShade4, s:none, 'none')
-call <sid>hi('TSString', s:voidShade4, s:none, 'none')
-call <sid>hi('TSStringEscape', s:voidFg, s:none, 'none')
-call <sid>hi('TSCharacter', s:voidShade4, s:none, 'none')
-call <sid>hi('TSNumber', s:voidFg, s:none, 'none')
-call <sid>hi('TSBoolean', s:voidFg, s:none, 'none')
-call <sid>hi('TSFloat', s:voidFg, s:none, 'none')
-call <sid>hi('TSAnnotation', s:voidFg, s:none, 'none')
-call <sid>hi('TSAttribute', s:voidFg, s:none, 'none')
-call <sid>hi('TSNamespace', s:voidFg, s:none, 'none')
+call <sid>hi('TSConstant', s:voidCream, s:none, 'none')
+call <sid>hi('TSConstBuiltin', s:voidCream, s:none, 'none')
+call <sid>hi('TSConstMacro', s:voidCream, s:none, 'none')
+call <sid>hi('TSStringRegex', s:voidGray4, s:none, 'none')
+call <sid>hi('TSString', s:voidGray4, s:none, 'none')
+call <sid>hi('TSStringEscape', s:voidCream, s:none, 'none')
+call <sid>hi('TSCharacter', s:voidGray4, s:none, 'none')
+call <sid>hi('TSNumber', s:voidCream, s:none, 'none')
+call <sid>hi('TSBoolean', s:voidCream, s:none, 'none')
+call <sid>hi('TSFloat', s:voidCream, s:none, 'none')
+call <sid>hi('TSAnnotation', s:voidCream, s:none, 'none')
+call <sid>hi('TSAttribute', s:voidCream, s:none, 'none')
+call <sid>hi('TSNamespace', s:voidCream, s:none, 'none')
 
-call <sid>hi('TSFuncBuiltin', s:voidFg, s:none, 'none')
-call <sid>hi('TSFunction', s:voidFg, s:none, 'none')
-call <sid>hi('TSFuncMacro', s:voidFg, s:none, 'none')
-call <sid>hi('TSParameter', s:voidFg, s:none, 'none')
-call <sid>hi('TSParameterReference', s:voidFg, s:none, 'none')
-call <sid>hi('TSMethod', s:voidFg, s:none, 'none')
-call <sid>hi('TSField', s:voidFg, s:none, 'none')
-call <sid>hi('TSProperty', s:voidFg, s:none, 'none')
-call <sid>hi('TSConstructor', s:voidFg, s:none, 'none')
+call <sid>hi('TSFuncBuiltin', s:voidCream, s:none, 'none')
+call <sid>hi('TSFunction', s:voidCream, s:none, 'none')
+call <sid>hi('TSFuncMacro', s:voidCream, s:none, 'none')
+call <sid>hi('TSParameter', s:voidCream, s:none, 'none')
+call <sid>hi('TSParameterReference', s:voidCream, s:none, 'none')
+call <sid>hi('TSMethod', s:voidCream, s:none, 'none')
+call <sid>hi('TSField', s:voidCream, s:none, 'none')
+call <sid>hi('TSProperty', s:voidCream, s:none, 'none')
+call <sid>hi('TSConstructor', s:voidCream, s:none, 'none')
 
-call <sid>hi('TSConditional', s:voidFg, s:none, 'bold')
-call <sid>hi('TSRepeat', s:voidFg, s:none, 'none')
-call <sid>hi('TSLabel', s:voidFg, s:none, 'none')
-call <sid>hi('TSKeyword', s:voidFg, s:none, 'bold')
-call <sid>hi('TSKeywordFunction', s:voidFg, s:none, 'bold')
-call <sid>hi('TSKeywordOperator', s:voidFg, s:none, 'none')
-call <sid>hi('TSOperator', s:voidFg, s:none, 'none')
-call <sid>hi('TSException', s:voidFg, s:none, 'none')
-call <sid>hi('TSType', s:voidFg, s:none, 'none')
-call <sid>hi('TSTypeBuiltin', s:voidFg, s:none, 'none')
-call <sid>hi('TSStructure', s:voidFg, s:none, 'none')
-call <sid>hi('TSInclude', s:voidFg, s:none, 'none')
+call <sid>hi('TSConditional', s:voidCream, s:none, 'bold')
+call <sid>hi('TSRepeat', s:voidCream, s:none, 'none')
+call <sid>hi('TSLabel', s:voidCream, s:none, 'none')
+call <sid>hi('TSKeyword', s:voidCream, s:none, 'bold')
+call <sid>hi('TSKeywordFunction', s:voidCream, s:none, 'bold')
+call <sid>hi('TSKeywordOperator', s:voidCream, s:none, 'none')
+call <sid>hi('TSOperator', s:voidCream, s:none, 'none')
+call <sid>hi('TSException', s:voidCream, s:none, 'none')
+call <sid>hi('TSType', s:voidCream, s:none, 'none')
+call <sid>hi('TSTypeBuiltin', s:voidCream, s:none, 'none')
+call <sid>hi('TSStructure', s:voidCream, s:none, 'none')
+call <sid>hi('TSInclude', s:voidCream, s:none, 'none')
 
-call <sid>hi('TSVariable', s:voidFg, s:none, 'none')
-call <sid>hi('TSVariableBuiltin', s:voidFg, s:none, 'none')
+call <sid>hi('TSVariable', s:voidCream, s:none, 'none')
+call <sid>hi('TSVariableBuiltin', s:voidCream, s:none, 'none')
 
-call <sid>hi('TSText', s:voidFg, s:none, 'none')
-call <sid>hi('TSStrong', s:voidFg, s:none, 'bold')
-call <sid>hi('TSEmphasis', s:voidFg, s:none, 'italic')
-call <sid>hi('TSUnderline', s:voidFg, s:none, 'underline')
-call <sid>hi('TSTitle', s:voidFg, s:none, 'none')
-call <sid>hi('TSLiteral', s:voidFg, s:none, 'none')
+call <sid>hi('TSText', s:voidCream, s:none, 'none')
+call <sid>hi('TSStrong', s:voidCream, s:none, 'bold')
+call <sid>hi('TSEmphasis', s:voidCream, s:none, 'italic')
+call <sid>hi('TSUnderline', s:voidCream, s:none, 'underline')
+call <sid>hi('TSTitle', s:voidCream, s:none, 'none')
+call <sid>hi('TSLiteral', s:voidCream, s:none, 'none')
 call <sid>hi('TSURI', s:voidBlue, s:none, 'none')
 
-call <sid>hi('TSTag', s:voidFg, s:none, 'none')
-call <sid>hi('TSTagDelimiter', s:voidFg, s:none, 'none')
+call <sid>hi('TSTag', s:voidCream, s:none, 'none')
+call <sid>hi('TSTagDelimiter', s:voidCream, s:none, 'none')
 
 " ------------
 " Languages
 " ------------
 
 " AsciiDoc
-call <sid>hi('asciidocAttributeEntry', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidocAttributeRef', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidocListingBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocLiteralBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocMacro', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocMacroAttributes', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocPassthroughBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocQuotedBold', s:voidFg, s:none, 'bold')
-call <sid>hi('asciidocQuotedEmphasized', s:voidFg, s:none, 'italic')
-call <sid>hi('asciidocQuotedMonospaced2', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocQuotedUnconstrainedBold', s:voidFg, s:none, 'bold')
-call <sid>hi('asciidocQuotedUnconstrainedEmphasized', s:voidFg, s:none, 'italic')
-call <sid>hi('asciidocRefMacro', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidocTableDelimiter', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidocTablePrefix', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidocURL', s:voidFg, s:none, 'underline')
+call <sid>hi('asciidocAttributeEntry', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidocAttributeRef', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidocListingBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocLiteralBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocMacro', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocMacroAttributes', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocPassthroughBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocQuotedBold', s:voidCream, s:none, 'bold')
+call <sid>hi('asciidocQuotedEmphasized', s:voidCream, s:none, 'italic')
+call <sid>hi('asciidocQuotedMonospaced2', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocQuotedUnconstrainedBold', s:voidCream, s:none, 'bold')
+call <sid>hi('asciidocQuotedUnconstrainedEmphasized', s:voidCream, s:none, 'italic')
+call <sid>hi('asciidocRefMacro', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidocTableDelimiter', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidocTablePrefix', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidocURL', s:voidCream, s:none, 'underline')
 
 " Asciidoctor
 call <sid>hi('asciidoctorAnchor', s:voidBlue, s:none, 'underline')
-call <sid>hi('asciidoctorBlock', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidoctorBlockOptions', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidoctorBold', s:voidFg, s:none, 'bold')
-call <sid>hi('asciidoctorCode', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorExampleBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorFile', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorItalic', s:voidFg, s:none, 'italic')
-call <sid>hi('asciidoctorListContinuation', s:voidShade2, s:none, 'none')
-call <sid>hi('asciidoctorListMarker', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorListingBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorLiteralBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorOption', s:voidShade3, s:none, 'none')
-call <sid>hi('asciidoctorSourceBlock', s:voidShade4, s:none, 'none')
-call <sid>hi('asciidoctorUrlDescription', s:voidFg, s:none, 'none')
+call <sid>hi('asciidoctorBlock', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidoctorBlockOptions', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidoctorBold', s:voidCream, s:none, 'bold')
+call <sid>hi('asciidoctorCode', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorExampleBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorFile', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorItalic', s:voidCream, s:none, 'italic')
+call <sid>hi('asciidoctorListContinuation', s:voidGray2, s:none, 'none')
+call <sid>hi('asciidoctorListMarker', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorListingBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorLiteralBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorOption', s:voidGray3, s:none, 'none')
+call <sid>hi('asciidoctorSourceBlock', s:voidGray4, s:none, 'none')
+call <sid>hi('asciidoctorUrlDescription', s:voidCream, s:none, 'none')
 
 " C
-call <sid>hi('cConditional', s:voidFg, s:none, 'bold')
-call <sid>hi('cConstant', s:voidFg, s:none, 'none')
-call <sid>hi('cFormat', s:voidFg, s:none, 'none')
-call <sid>hi('cMulti', s:voidFg, s:none, 'none')
-call <sid>hi('cNumbers', s:voidFg, s:none, 'none')
-call <sid>hi('cOperator', s:voidFg, s:none, 'none')
-call <sid>hi('cSpecial', s:voidFg, s:none, 'none')
-call <sid>hi('cSpecialCharacter', s:voidFg, s:none, 'none')
-call <sid>hi('cStatement', s:voidFg, s:none, 'bold')
-call <sid>hi('cStorageClass', s:voidFg, s:none, 'none')
-call <sid>hi('cString', s:voidShade4, s:none, 'none')
-call <sid>hi('cStructure', s:voidFg, s:none, 'bold')
-call <sid>hi('cType', s:voidFg, s:none, 'none')
+call <sid>hi('cConditional', s:voidCream, s:none, 'bold')
+call <sid>hi('cConstant', s:voidCream, s:none, 'none')
+call <sid>hi('cFormat', s:voidCream, s:none, 'none')
+call <sid>hi('cMulti', s:voidCream, s:none, 'none')
+call <sid>hi('cNumbers', s:voidCream, s:none, 'none')
+call <sid>hi('cOperator', s:voidCream, s:none, 'none')
+call <sid>hi('cSpecial', s:voidCream, s:none, 'none')
+call <sid>hi('cSpecialCharacter', s:voidCream, s:none, 'none')
+call <sid>hi('cStatement', s:voidCream, s:none, 'bold')
+call <sid>hi('cStorageClass', s:voidCream, s:none, 'none')
+call <sid>hi('cString', s:voidGray4, s:none, 'none')
+call <sid>hi('cStructure', s:voidCream, s:none, 'bold')
+call <sid>hi('cType', s:voidCream, s:none, 'none')
 
 " C++
-call <sid>hi('cppConditional', s:voidFg, s:none, 'bold')
-call <sid>hi('cppConstant', s:voidFg, s:none, 'none')
-call <sid>hi('cppFormat', s:voidFg, s:none, 'none')
-call <sid>hi('cppMulti', s:voidFg, s:none, 'none')
-call <sid>hi('cppNumbers', s:voidFg, s:none, 'none')
-call <sid>hi('cppOperator', s:voidFg, s:none, 'none')
-call <sid>hi('cppSpecial', s:voidFg, s:none, 'none')
-call <sid>hi('cppSpecialCharacter', s:voidFg, s:none, 'none')
-call <sid>hi('cppStatement', s:voidFg, s:none, 'bold')
-call <sid>hi('cppStorageClass', s:voidFg, s:none, 'none')
-call <sid>hi('cppString', s:voidShade4, s:none, 'none')
-call <sid>hi('cppStructure', s:voidFg, s:none, 'bold')
-call <sid>hi('cppType', s:voidFg, s:none, 'none')
+call <sid>hi('cppConditional', s:voidCream, s:none, 'bold')
+call <sid>hi('cppConstant', s:voidCream, s:none, 'none')
+call <sid>hi('cppFormat', s:voidCream, s:none, 'none')
+call <sid>hi('cppMulti', s:voidCream, s:none, 'none')
+call <sid>hi('cppNumbers', s:voidCream, s:none, 'none')
+call <sid>hi('cppOperator', s:voidCream, s:none, 'none')
+call <sid>hi('cppSpecial', s:voidCream, s:none, 'none')
+call <sid>hi('cppSpecialCharacter', s:voidCream, s:none, 'none')
+call <sid>hi('cppStatement', s:voidCream, s:none, 'bold')
+call <sid>hi('cppStorageClass', s:voidCream, s:none, 'none')
+call <sid>hi('cppString', s:voidGray4, s:none, 'none')
+call <sid>hi('cppStructure', s:voidCream, s:none, 'bold')
+call <sid>hi('cppType', s:voidCream, s:none, 'none')
 
 " CSS
-call <sid>hi('cssTagName', s:voidFg, s:none, 'bold')
-call <sid>hi('cssClassName', s:voidFg, s:none, 'bold')
-call <sid>hi('cssAtRule', s:voidFg, s:none, 'bold')
-call <sid>hi('cssColor', s:voidShade4, s:none, 'none')
+call <sid>hi('cssTagName', s:voidCream, s:none, 'bold')
+call <sid>hi('cssClassName', s:voidCream, s:none, 'bold')
+call <sid>hi('cssAtRule', s:voidCream, s:none, 'bold')
+call <sid>hi('cssColor', s:voidGray4, s:none, 'none')
 
 " diff
-call <sid>hi('diffFile', s:voidFg, s:none, 'bold')
+call <sid>hi('diffFile', s:voidCream, s:none, 'bold')
 call <sid>hi('diffAdded', s:voidGreen, s:none, 'none')
 call <sid>hi('diffRemoved', s:voidRed2, s:none, 'none')
 
 " HTML
-call <sid>hi('htmlArg', s:voidFg, s:none, 'none')
-call <sid>hi('htmlEndTag', s:voidFg, s:none, 'none')
-call <sid>hi('htmlSpecialChar', s:voidFg, s:none, 'none')
-call <sid>hi('htmlSpecialTagName', s:voidFg, s:none, 'none')
-call <sid>hi('htmlTag', s:voidFg, s:none, 'none')
-call <sid>hi('htmlTagName', s:voidFg, s:none, 'none')
-call <sid>hi('htmlItalic', s:voidFg, s:none, 'italic')
-call <sid>hi('htmlBold', s:voidFg, s:none, 'bold')
+call <sid>hi('htmlArg', s:voidCream, s:none, 'none')
+call <sid>hi('htmlEndTag', s:voidCream, s:none, 'none')
+call <sid>hi('htmlSpecialChar', s:voidCream, s:none, 'none')
+call <sid>hi('htmlSpecialTagName', s:voidCream, s:none, 'none')
+call <sid>hi('htmlTag', s:voidCream, s:none, 'none')
+call <sid>hi('htmlTagName', s:voidCream, s:none, 'none')
+call <sid>hi('htmlItalic', s:voidCream, s:none, 'italic')
+call <sid>hi('htmlBold', s:voidCream, s:none, 'bold')
 
 " Ledger
-call <sid>hi('ledgerAmount', s:voidFg, s:none, 'italic')
-call <sid>hi('ledgerPostingMetadata', s:voidShade4, s:none, 'none')
-call <sid>hi('ledgerTag', s:voidShade3, s:none, 'none')
-call <sid>hi('ledgerTags', s:voidShade3, s:none, 'none')
-call <sid>hi('ledgerTransaction', s:voidFg, s:none, 'bold')
-call <sid>hi('ledgerTransactionDate', s:voidFg, s:none, 'bold')
-call <sid>hi('ledgerTransactionMetadata', s:voidShade3, s:none, 'none')
+call <sid>hi('ledgerAmount', s:voidCream, s:none, 'italic')
+call <sid>hi('ledgerPostingMetadata', s:voidGray4, s:none, 'none')
+call <sid>hi('ledgerTag', s:voidGray3, s:none, 'none')
+call <sid>hi('ledgerTags', s:voidGray3, s:none, 'none')
+call <sid>hi('ledgerTransaction', s:voidCream, s:none, 'bold')
+call <sid>hi('ledgerTransactionDate', s:voidCream, s:none, 'bold')
+call <sid>hi('ledgerTransactionMetadata', s:voidGray3, s:none, 'none')
 
 " Mail
-call <sid>hi('mailHeaderKey', s:voidShade4, s:none, 'none')
-call <sid>hi('mailHeader', s:voidShade4, s:none, 'none')
+call <sid>hi('mailHeaderKey', s:voidGray4, s:none, 'none')
+call <sid>hi('mailHeader', s:voidGray4, s:none, 'none')
 
 " Make
-call <sid>hi('makeTarget', s:voidFg, s:none, 'bold')
-call <sid>hi('makeSpecTarget', s:voidFg, s:none, 'none')
+call <sid>hi('makeTarget', s:voidCream, s:none, 'bold')
+call <sid>hi('makeSpecTarget', s:voidCream, s:none, 'none')
 
 " Markdown
-call <sid>hi('mkdFootnotes', s:voidShade3, s:none, 'underline')
-call <sid>hi('mkdLinkDef', s:voidShade3, s:none, 'none')
-call <sid>hi('mkdCode', s:voidShade4, s:none, 'none')
+call <sid>hi('mkdFootnotes', s:voidGray3, s:none, 'underline')
+call <sid>hi('mkdLinkDef', s:voidGray3, s:none, 'none')
+call <sid>hi('mkdCode', s:voidGray4, s:none, 'none')
 call <sid>hi('mkdHeading', s:voidGold, s:none, 'bold')
 call <sid>hi('mkdLineBreak', s:none, s:voidRed2, 'none')
-call <sid>hi('mkdInlineURL', s:voidFg, s:none, 'underline')
+call <sid>hi('mkdInlineURL', s:voidCream, s:none, 'underline')
 
 " org-mode
 call <sid>hi('orgTodo', s:voidGreen, s:none, 'none')
-call <sid>hi('orgDone', s:voidShade3, s:none, 'none')
-call <sid>hi('orgTag', s:voidShade4, s:none, 'none')
-call <sid>hi('orgOption', s:voidShade3, s:none, 'none')
-call <sid>hi('orgBlockDelimiter', s:voidShade3, s:none, 'none')
-call <sid>hi('orgCode', s:voidFg, s:none, 'none')
+call <sid>hi('orgDone', s:voidGray3, s:none, 'none')
+call <sid>hi('orgTag', s:voidGray4, s:none, 'none')
+call <sid>hi('orgOption', s:voidGray3, s:none, 'none')
+call <sid>hi('orgBlockDelimiter', s:voidGray3, s:none, 'none')
+call <sid>hi('orgCode', s:voidCream, s:none, 'none')
 
 " orgmode.nvim
-call <sid>hi('OrgTSHeadlineLevel1', s:voidFg, s:none, 'bold')
-call <sid>hi('OrgTSHeadlineLevel2', s:voidFg, s:none, 'bold')
-call <sid>hi('OrgTSHeadlineLevel3', s:voidFg, s:none, 'bold')
-call <sid>hi('OrgTSComment', s:voidShade3, s:none, 'none')
-call <sid>hi('OrgTSTag', s:voidShade4, s:none, 'none')
-call <sid>hi('OrgTSTimestampActive', s:voidShade4, s:none, 'none')
-call <sid>hi('OrgTSPropertyDrawer', s:voidShade3, s:none, 'none')
-call <sid>hi('OrgTSDirective', s:voidShade3, s:none, 'none')
-call <sid>hi('OrgTSCheckboxChecked', s:voidShade3, s:none, 'none')
-call <sid>hi('OrgTSCheckboxHalfChecked', s:voidShade4, s:none, 'none')
-call <sid>hi('OrgTSCheckboxUnchecked', s:voidShade4, s:none, 'none')
+call <sid>hi('OrgTSHeadlineLevel1', s:voidCream, s:none, 'bold')
+call <sid>hi('OrgTSHeadlineLevel2', s:voidCream, s:none, 'bold')
+call <sid>hi('OrgTSHeadlineLevel3', s:voidCream, s:none, 'bold')
+call <sid>hi('OrgTSComment', s:voidGray3, s:none, 'none')
+call <sid>hi('OrgTSTag', s:voidGray4, s:none, 'none')
+call <sid>hi('OrgTSTimestampActive', s:voidGray4, s:none, 'none')
+call <sid>hi('OrgTSPropertyDrawer', s:voidGray3, s:none, 'none')
+call <sid>hi('OrgTSDirective', s:voidGray3, s:none, 'none')
+call <sid>hi('OrgTSCheckboxChecked', s:voidGray3, s:none, 'none')
+call <sid>hi('OrgTSCheckboxHalfChecked', s:voidGray4, s:none, 'none')
+call <sid>hi('OrgTSCheckboxUnchecked', s:voidGray4, s:none, 'none')
 
 " Python
-call <sid>hi('pythonImport', s:voidFg, s:none, 'none')
-call <sid>hi('pythonConditional', s:voidFg, s:none, 'bold')
-call <sid>hi('pythonStrFormat', s:voidShade4, s:none, 'bold')
+call <sid>hi('pythonImport', s:voidCream, s:none, 'none')
+call <sid>hi('pythonConditional', s:voidCream, s:none, 'bold')
+call <sid>hi('pythonStrFormat', s:voidGray4, s:none, 'bold')
 
 " Quickfix
-call <sid>hi('qfError', s:voidCream2, s:voidRed2, 'bold')
-call <sid>hi('qfFileName', s:voidShade3, s:none, 'none')
-call <sid>hi('qfLineNr', s:voidShade3, s:none, 'italic')
+call <sid>hi('qfError', s:voidCream, s:voidRed2, 'bold')
+call <sid>hi('qfFileName', s:voidGray3, s:none, 'none')
+call <sid>hi('qfLineNr', s:voidGray3, s:none, 'italic')
 
 " Rust
-call <sid>hi('rustConditional', s:voidFg, s:none, 'bold')
-call <sid>hi('rustKeyword', s:voidFg, s:none, 'bold')
-call <sid>hi('rustRepeat', s:voidFg, s:none, 'bold')
-call <sid>hi('rustStorage', s:voidFg, s:none, 'bold')
-call <sid>hi('rustStructure', s:voidFg, s:none, 'bold')
+call <sid>hi('rustConditional', s:voidCream, s:none, 'bold')
+call <sid>hi('rustKeyword', s:voidCream, s:none, 'bold')
+call <sid>hi('rustRepeat', s:voidCream, s:none, 'bold')
+call <sid>hi('rustStorage', s:voidCream, s:none, 'bold')
+call <sid>hi('rustStructure', s:voidCream, s:none, 'bold')
 
 " SH
-call <sid>hi('shShebang', s:voidShade3, s:none, 'italic')
-call <sid>hi('shConditional', s:voidFg, s:none, 'bold')
+call <sid>hi('shShebang', s:voidGray3, s:none, 'italic')
+call <sid>hi('shConditional', s:voidCream, s:none, 'bold')
 
 " XML
-call <sid>hi('xmlAttrib', s:voidFg, s:none, 'none')
-call <sid>hi('xmlEndTag', s:voidFg, s:none, 'none')
-call <sid>hi('xmlTag', s:voidFg, s:none, 'none')
-call <sid>hi('xmlTagName', s:voidFg, s:none, 'none')
+call <sid>hi('xmlAttrib', s:voidCream, s:none, 'none')
+call <sid>hi('xmlEndTag', s:voidCream, s:none, 'none')
+call <sid>hi('xmlTag', s:voidCream, s:none, 'none')
+call <sid>hi('xmlTagName', s:voidCream, s:none, 'none')
 
 " YAML
-call <sid>hi('yamlAlias', s:voidFg, s:none, 'none')
-call <sid>hi('yamlAnchor', s:voidFg, s:none, 'none')
-call <sid>hi('yamlDocumentHeader', s:voidFg, s:none, 'none')
-call <sid>hi('yamlKey', s:voidFg, s:none, 'none')
+call <sid>hi('yamlAlias', s:voidCream, s:none, 'none')
+call <sid>hi('yamlAnchor', s:voidCream, s:none, 'none')
+call <sid>hi('yamlDocumentHeader', s:voidCream, s:none, 'none')
+call <sid>hi('yamlKey', s:voidCream, s:none, 'none')
 
 " ------------
 " Plugins
@@ -377,7 +345,7 @@ call <sid>hi('yamlKey', s:voidFg, s:none, 'none')
 
 " Dirvish
 call <sid>hi('DirvishPathTail', s:voidBlue, s:none, 'none')
-call <sid>hi('DirvishArg', s:voidFg, s:none, 'none')
+call <sid>hi('DirvishArg', s:voidCream, s:none, 'none')
 
 " FZF
 let g:fzf_colors =
@@ -396,17 +364,17 @@ let g:fzf_colors =
     \ 'header':  ['fg', 'Comment'] }
 
 " Fugitive
-call <sid>hi('fugitiveHeading', s:voidFg, s:none, 'bold')
-call <sid>hi('fugitiveUntrackedHeading', s:voidFg, s:none, 'bold')
-call <sid>hi('fugitiveUnstagedHeading', s:voidFg, s:none, 'bold')
-call <sid>hi('fugitiveStagedHeading', s:voidFg, s:none, 'bold')
-call <sid>hi('fugitiveSymbolicRef', s:voidShade4, s:none, 'none')
+call <sid>hi('fugitiveHeading', s:voidCream, s:none, 'bold')
+call <sid>hi('fugitiveUntrackedHeading', s:voidCream, s:none, 'bold')
+call <sid>hi('fugitiveUnstagedHeading', s:voidCream, s:none, 'bold')
+call <sid>hi('fugitiveStagedHeading', s:voidCream, s:none, 'bold')
+call <sid>hi('fugitiveSymbolicRef', s:voidGray4, s:none, 'none')
 call <sid>hi('fugitiveStagedModifier', s:voidGreen, s:none, 'none')
 
 " Signify
-call <sid>hi('SignifySignAdd', s:voidGreen, s:voidBg3, 'bold')
-call <sid>hi('SignifySignChange', s:voidBlue, s:voidBg3, 'bold')
-call <sid>hi('SignifySignDelete', s:voidRed2, s:voidBg3, 'bold')
+call <sid>hi('SignifySignAdd', s:voidGreen, s:voidBlack, 'bold')
+call <sid>hi('SignifySignChange', s:voidBlue, s:voidBlack, 'bold')
+call <sid>hi('SignifySignDelete', s:voidRed2, s:voidBlack, 'bold')
 
 " vim help
 call <sid>hi('helpHyperTextJump', s:voidBlue, s:none, 'none')
