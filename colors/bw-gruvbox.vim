@@ -17,12 +17,12 @@ let g:colors_name="bw-gruvbox"
 
 let c = {}
 let c.black = {'gui': '#282828', 'cterm256': '235'}
-let c.white = {'gui': '#EBDBB2', 'cterm256': '242'}
-let c.light_white = {'gui': '#A89984', 'cterm256': '242'}
+let c.white = {'gui': '#D5C4A1', 'cterm256': '242'}
+let c.light_white = {'gui': '#EBDBB2', 'cterm256': '242'}
 let c.gray = {'gui': '#928374', 'cterm256': '241'}
 let c.medium_gray = {'gui': '#665C64', 'cterm256': '240'}
 let c.dark_gray = {'gui': '#504945', 'cterm256': '239'}
-let c.bright_white = {'gui': '#A89984', 'cterm256': '242'}
+let c.bright_white = {'gui': '#FBF1C7', 'cterm256': '242'}
 
 let c.blue = {'gui': '#83A598', 'cterm256': '109'}
 let c.green = {'gui': '#98971A', 'cterm256': '64'}
