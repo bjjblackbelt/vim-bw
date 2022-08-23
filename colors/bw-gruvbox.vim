@@ -1,4 +1,4 @@
-" bw.vim
+" bw-gruvbox.vim
 " By Michał Góral
 "
 
@@ -9,7 +9,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name="bw"
+let g:colors_name="bw-gruvbox"
 
 " ==========================
 " Highlighting Function
