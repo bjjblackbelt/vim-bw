@@ -2,7 +2,7 @@
 " Highlighting Function
 " ==========================
 "  >> (inspired by https://github.com/tomasiser/vim-code-dark and https://github.com/chriskempson/base16-vim)
-"
+
 fun! bw#hi(group, fg, bg, attr)
   if !empty(a:fg)
     exec "hi " . a:group . " guifg=" . a:fg.gui 
@@ -13,6 +13,10 @@ fun! bw#hi(group, fg, bg, attr)
   if a:attr != ""
     exec "hi " . a:group . " gui=" . a:attr 
   endif
+endfun
+
+fun! bw#hilink(group, other)
+  exec "hi link " . a:group . " " . a:other
 endfun
 
 " ==========================
@@ -51,6 +55,7 @@ fun! bw#init(c) abort
     call bw#hi('Conditional', a:c.white, a:c.none, 'none')
     call bw#hi('Constant', a:c.white, a:c.none, 'none')
     call bw#hi('Define', a:c.white, a:c.none, 'none')
+    call bw#hi('Delimeter', a:c.white, a:c.black, 'none')
     call bw#hi('DiffAdd', a:c.black, a:c.green, 'none')
     call bw#hi('DiffChange', a:c.black, a:c.gold, 'none')
     call bw#hi('DiffDelete', a:c.white, a:c.red, 'none')
@@ -59,7 +64,7 @@ fun! bw#init(c) abort
     call bw#hi('Float', a:c.white, a:c.none, 'none')
     call bw#hi('Function', a:c.white, a:c.none, 'none')
     call bw#hi('Identifier', a:c.white, a:c.none, 'none')
-    call bw#hi('Keyword', a:c.white, a:c.none, 'none')
+    call bw#hi('Keyword', a:c.white, a:c.none, 'bold')
     call bw#hi('Label', a:c.white, a:c.none, 'none')
     call bw#hi('NonText', a:c.dark_gray, a:c.none, 'none')
     call bw#hi('Number', a:c.white, a:c.none, 'none')
@@ -67,6 +72,7 @@ fun! bw#init(c) abort
     call bw#hi('PreProc', a:c.white, a:c.none, 'none')
     call bw#hi('QuickFixLine', a:c.black, a:c.gold, 'none')
     call bw#hi('Special', a:c.white, a:c.none, 'none')
+    call bw#hi('SpecialChar', a:c.bright_white, a:c.none, 'none')
     call bw#hi('SpecialKey', a:c.white, a:c.none, 'none')
     call bw#hi('SpellBad', a:c.red, a:c.none, 'italic,undercurl')
     call bw#hi('SpellCap', a:c.white, a:c.none, 'italic,undercurl')
@@ -88,62 +94,87 @@ fun! bw#init(c) abort
     call bw#hi('DiffText', a:c.blue, a:c.none, 'underline')
 
     " Neovim Treesitter
-    call bw#hi('@error', a:c.red, a:c.none, 'none')
-    call bw#hi('@comment', a:c.dark_gray, a:c.none, 'italic')
-    call bw#hi('@punctDelimiter', a:c.white, a:c.none, 'none')
-    call bw#hi('@punctBracket', a:c.white, a:c.none, 'none')
-    call bw#hi('@punctSpecial', a:c.white, a:c.none, 'none')
+    call bw#hi('@none', a:c.none, a:c.none, 'none')
+    call bw#hilink('@preproc', 'PreProc')
+    call bw#hilink('@define', 'Define')
+    call bw#hilink('@operator', 'Operator')
 
-    call bw#hi('@constant', a:c.white, a:c.none, 'none')
-    call bw#hi('@constBuiltin', a:c.white, a:c.none, 'none')
-    call bw#hi('@constMacro', a:c.white, a:c.none, 'none')
-    call bw#hi('@stringRegex', a:c.bright_white, a:c.none, 'none')
-    call bw#hi('@string', a:c.bright_white, a:c.none, 'none')
-    call bw#hi('@stringEscape', a:c.white, a:c.none, 'none')
-    call bw#hi('@character', a:c.bright_white, a:c.none, 'none')
-    call bw#hi('@number', a:c.white, a:c.none, 'none')
-    call bw#hi('@boolean', a:c.white, a:c.none, 'none')
-    call bw#hi('@float', a:c.white, a:c.none, 'none')
-    call bw#hi('@annotation', a:c.white, a:c.none, 'none')
-    call bw#hi('@attribute', a:c.white, a:c.none, 'none')
-    call bw#hi('@namespace', a:c.white, a:c.none, 'none')
+    call bw#hilink('@punctuation.delimeter', 'Delimeter')
+    call bw#hilink('@punctuation.bracket', 'Delimeter')
+    call bw#hilink('@punctuation.special', 'Delimeter')
 
-    call bw#hi('@funcBuiltin', a:c.white, a:c.none, 'none')
-    call bw#hi('@function', a:c.white, a:c.none, 'none')
-    call bw#hi('@funcMacro', a:c.white, a:c.none, 'none')
-    call bw#hi('@parameter', a:c.white, a:c.none, 'none')
-    call bw#hi('@parameterReference', a:c.white, a:c.none, 'none')
-    call bw#hi('@method', a:c.white, a:c.none, 'none')
-    call bw#hi('@field', a:c.white, a:c.none, 'none')
-    call bw#hi('@property', a:c.white, a:c.none, 'none')
-    call bw#hi('@constructor', a:c.white, a:c.none, 'none')
+    call bw#hilink('@string', 'String')
+    call bw#hilink('@string.regex', 'String')
+    call bw#hilink('@string.escape', 'SpecialChar')
+    call bw#hilink('@string.special', 'SpecialChar')
 
-    call bw#hi('@conditional', a:c.white, a:c.none, 'bold')
-    call bw#hi('@repeat', a:c.white, a:c.none, 'bold')
-    call bw#hi('@label', a:c.white, a:c.none, 'none')
-    call bw#hi('@keyword', a:c.white, a:c.none, 'bold')
-    call bw#hi('@keywordFunction', a:c.white, a:c.none, 'bold')
-    call bw#hi('@keywordOperator', a:c.white, a:c.none, 'none')
-    call bw#hi('@operator', a:c.white, a:c.none, 'none')
-    call bw#hi('@exception', a:c.white, a:c.none, 'none')
-    call bw#hi('@type', a:c.white, a:c.none, 'none')
-    call bw#hi('@typeBuiltin', a:c.white, a:c.none, 'none')
-    call bw#hi('@structure', a:c.white, a:c.none, 'none')
-    call bw#hi('@include', a:c.white, a:c.none, 'none')
+    call bw#hilink('@character', 'Character')
+    call bw#hilink('@character.special', 'SpecialChar')
 
-    call bw#hi('@variable', a:c.white, a:c.none, 'none')
-    call bw#hi('@variableBuiltin', a:c.white, a:c.none, 'none')
+    call bw#hilink('@boolean', 'Boolean')
+    call bw#hilink('@number', 'Number')
+    call bw#hilink('@float', 'Float')
 
-    call bw#hi('@text', a:c.white, a:c.none, 'none')
-    call bw#hi('@strong', a:c.white, a:c.none, 'bold')
-    call bw#hi('@emphasis', a:c.white, a:c.none, 'italic')
-    call bw#hi('@underline', a:c.white, a:c.none, 'underline')
-    call bw#hi('@title', a:c.bright_white, a:c.none, 'none')
-    call bw#hi('@literal', a:c.white, a:c.none, 'none')
-    call bw#hi('@uRI', a:c.blue, a:c.none, 'none')
+    call bw#hilink('@function', 'Function')
+    call bw#hilink('@function.call', 'Function')
+    call bw#hilink('@function.builtin', 'Special')
+    call bw#hilink('@function.macro', 'Macro')
+    call bw#hilink('@method', 'Function')
+    call bw#hilink('@method.call', 'Function')
+    call bw#hilink('@constructor', 'Special')
+    call bw#hilink('@parameter', 'Identifier')
 
-    call bw#hi('@tag', a:c.white, a:c.none, 'none')
-    call bw#hi('@tagDelimiter', a:c.white, a:c.none, 'none')
+    call bw#hilink('@keyword', 'Keyword')
+    call bw#hilink('@keyword.function', 'Keyword')
+    call bw#hilink('@keyword.operator', 'Keyword')
+    call bw#hilink('@keyword.return', 'Keyword')
+
+    call bw#hilink('@conditional', 'Conditional')
+    call bw#hilink('@repeat', 'Repeat')
+    call bw#hilink('@debug', 'Debug')
+    call bw#hilink('@label', 'Label')
+    call bw#hilink('@include', 'Include')
+    call bw#hilink('@exception', 'Exception')
+
+    call bw#hilink('@type', 'Type')
+    call bw#hilink('@type.builtin', 'Type')
+    call bw#hilink('@type.qualifier', 'Type')
+    call bw#hilink('@type.definition', 'Typedef')
+
+    call bw#hilink('@storageclass', 'StorageClass')
+    call bw#hilink('@attribute', 'PreProc')
+    call bw#hilink('@field', 'Identifier')
+    call bw#hilink('@property', 'Identifier')
+
+    call bw#hilink('@variable', 'Normal')
+    call bw#hilink('@variable.builtin', 'Special')
+    call bw#hilink('@constant', 'Constant')
+    call bw#hilink('@constant.builtin', 'Special')
+    call bw#hilink('@constant.macro', 'Define')
+    call bw#hilink('@namespace', 'Include')
+    call bw#hilink('@symbol', 'Identifier')
+
+    call bw#hilink('@text', 'Normal')
+    call bw#hi('@text.strong', a:c.white, a:c.black, 'bold')
+    call bw#hi('@text.emphasis', a:c.white, a:c.black, 'italic')
+    call bw#hi('@text.underline', a:c.white, a:c.black, 'underline')
+    call bw#hi('@text.strike', a:c.white, a:c.black, 'strikethrough')
+    call bw#hilink('@text.title', 'Title')
+    call bw#hilink('@text.literal', 'String')
+    call bw#hilink('@text.uri', 'Underlined')
+    call bw#hilink('@text.math', 'Special')
+    call bw#hilink('@text.environment', 'Macro')
+    call bw#hilink('@text.environment.name', 'Type')
+    call bw#hilink('@text.reference', 'Constant')
+
+    call bw#hilink('@text.todo', 'Todo')
+    call bw#hilink('@text.note', 'SpecialComment')
+    call bw#hilink('@text.warning', 'WarningMsg')
+    call bw#hilink('@text.danger', 'ErrorMsg')
+
+    call bw#hilink('@tag', 'Tag')
+    call bw#hilink('@tag.attribute', 'Identifier')
+    call bw#hilink('@tag.delimiter', 'Delimiter')
 
     " ------------
     " Languages
@@ -257,6 +288,9 @@ fun! bw#init(c) abort
     call bw#hi('mkdHeading', a:c.gold, a:c.none, 'bold')
     call bw#hi('mkdLineBreak', a:c.none, a:c.red, 'none')
     call bw#hi('mkdInlineURL', a:c.white, a:c.none, 'underline')
+
+    call bw#hilink('@punctuation.special.markdown', 'mkdHeading')
+    call bw#hilink('@text.reference.markdown', 'mkdHeading')
 
     " org-mode
     call bw#hi('orgTodo', a:c.green, a:c.none, 'none')
