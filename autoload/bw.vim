@@ -209,6 +209,7 @@ fun! bw#init(c) abort
     call bw#hi('asciidoctorListContinuation', a:c.medium_gray, a:c.none, 'none')
     call bw#hi('asciidoctorListMarker', a:c.bright_white, a:c.none, 'none')
     call bw#hi('asciidoctorLiteralBlock', a:c.bright_white, a:c.none, 'none')
+    call bw#hi('asciidoctorLink', a:c.blue, a:c.none, 'underline')
     call bw#hi('asciidoctorOption', a:c.dark_gray, a:c.none, 'none')
     call bw#hi('asciidoctorSourceBlock', a:c.light_white, a:c.none, 'none')
     call bw#hi('asciidoctorUrlDescription', a:c.white, a:c.none, 'none')
