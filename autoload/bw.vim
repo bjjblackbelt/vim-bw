@@ -200,13 +200,13 @@ fun! bw#init(c) abort
 
     " Asciidoctor
     call bw#hi('asciidoctorAnchor', a:c.blue, a:c.none, 'underline')
-    call bw#hi('asciidoctorBlock', a:c.medium_gray, a:c.none, 'none')
+    call bw#hi('asciidoctorBlock', a:c.dark_gray, a:c.none, 'none')
     call bw#hi('asciidoctorBlockOptions', a:c.dark_gray, a:c.none, 'none')
     call bw#hi('asciidoctorBold', a:c.white, a:c.none, 'bold')
     call bw#hi('asciidoctorCode', a:c.light_white, a:c.none, 'none')
     call bw#hi('asciidoctorFile', a:c.bright_white, a:c.none, 'none')
     call bw#hi('asciidoctorItalic', a:c.white, a:c.none, 'italic')
-    call bw#hi('asciidoctorListContinuation', a:c.medium_gray, a:c.none, 'none')
+    call bw#hi('asciidoctorListContinuation', a:c.dark_gray, a:c.none, 'none')
     call bw#hi('asciidoctorListMarker', a:c.bright_white, a:c.none, 'none')
     call bw#hi('asciidoctorLiteralBlock', a:c.bright_white, a:c.none, 'none')
     call bw#hi('asciidoctorLink', a:c.blue, a:c.none, 'underline')
