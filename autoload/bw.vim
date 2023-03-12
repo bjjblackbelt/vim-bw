@@ -38,6 +38,7 @@ fun! bw#init(c) abort
     call bw#hi('LineNr', a:c.dark_gray, a:c.black, 'none')
     call bw#hi('MatchParen', a:c.none, a:c.medium_gray, 'bold')
     call bw#hi('Normal', a:c.white, a:c.black, 'none')
+    call bw#hi('NormalFloat', a:c.white, a:c.gray, 'none')
     call bw#hi('Pmenu', a:c.white, a:c.medium_gray, 'none')
     call bw#hi('PmenuSel', a:c.none, a:c.gray, 'none')
     call bw#hi('Search', a:c.black, a:c.gold, 'none')
@@ -350,6 +351,43 @@ fun! bw#init(c) abort
     " ------------
     " Plugins
     " ------------
+
+    " Lazy
+    call bw#hi('LazyButton', a:c.white, a:c.medium_gray, 'none')
+    call bw#hi('LazyButtonActive', a:c.blue, a:c.black, 'bold')
+    call bw#hi('LazyH1', a:c.blue, a:c.black, 'none')  " homebutton
+    call bw#hi('LazyH2', a:c.white, a:c.none, 'bold')
+    call bw#hi('LazyUrl', a:c.blue, a:c.none, 'none')
+    call bw#hi('LazyDir', a:c.blue, a:c.none, 'none')
+
+    call bw#hi('LazyCommit', a:c.gold, a:c.none, 'none')
+    call bw#hi('LazyCommitIssue', a:c.white, a:c.none, 'italic')
+    call bw#hi('LazyCommitScope', a:c.white, a:c.none, 'bold')
+    call bw#hi('LazyCommitType', a:c.white, a:c.none, 'bold')
+
+    call bw#hi('LazyReasonCmd', a:c.bright_white, a:c.none, 'italic')
+    call bw#hilink('LazyReasonEvent', 'LazyReasonCmd')
+    call bw#hilink('LazyReasonFt', 'LazyReasonCmd')
+    call bw#hilink('LazyReasonImport', 'LazyReasonCmd')
+    call bw#hilink('LazyReasonKeys', 'LazyReasonCmd')
+    call bw#hilink('LazyReasonRuntime', 'LazyReasonCmd')
+    call bw#hilink('LazyReasonSource', 'LazyReasonCmd')
+    call bw#hilink('LazyReasonStart', 'LazyReasonCmd')
+
+    call bw#hilink('LazyNormal', 'NormalFloat')
+    call bw#hilink('LazyComment', 'Comment')
+    call bw#hilink('LazySpecial', 'LazyCommit')
+    call bw#hi('LazySpecial', a:c.white, a:c.none, 'bold')  " button shortcut, huge dot, some shortcuts
+    call bw#hilink('LazyNoCond', 'NormalFloat')
+    call bw#hi('LazyProp', a:c.bright_white, a:c.none, 'none')
+    call bw#hilink('LazyDimmed', 'Conceal')
+
+    call bw#hi('LazyProgressDone', a:c.green, a:c.green, 'none')
+    call bw#hi('LazyProgressTodo', a:c.medium_gray, a:c.medium_gray, 'none')
+
+    call bw#hilink('LazyTaskError', 'ErrorMsg')
+    call bw#hilink('LazyTaskOutput', 'NormalFloat')
+    call bw#hilink('LazyValue', 'String')
 
     " Dirvish
     call bw#hi('DirvishPathTail', a:c.blue, a:c.none, 'none')
