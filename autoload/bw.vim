@@ -178,6 +178,43 @@ fun! bw#init(c) abort
     call bw#hilink('@tag.delimiter', 'Delimiter')
 
     " ------------
+    " LSP, Diagnostics
+    " ------------
+
+    " virtual text with diagnostics
+    call bw#hi('DiagnosticError', a:c.red, a:c.none, 'italic')
+    call bw#hi('DiagnosticHint',  a:c.blue, a:c.none, 'italic')
+    call bw#hi('DiagnosticInfo',  a:c.blue, a:c.none, 'italic')
+    call bw#hi('DiagnosticWarn',  a:c.gold, a:c.none, 'italic')
+
+    " diagnostics in floating window shown for details
+    call bw#hi('DiagnosticFloatingError', a:c.red, a:c.none, 'none')
+    call bw#hi('DiagnosticFloatingHint',  a:c.blue, a:c.none, 'none')
+    call bw#hi('DiagnosticFloatingInfo',  a:c.blue, a:c.none, 'none')
+    call bw#hi('DiagnosticFloatingWarn',  a:c.gold, a:c.none, 'none')
+
+    call bw#hilink('DiagnosticSignError', 'DiagnosticError')
+    call bw#hilink('DiagnosticSignHint', 'DiagnosticHint')
+    call bw#hilink('DiagnosticSignInfo', 'DiagnosticInfo')
+    call bw#hilink('DiagnosticSignWarn', 'DiagnosticWarn')
+
+    " underlined error inside the code
+    call bw#hi('DiagnosticUnderlineError', a:c.none, a:c.none, 'underline')
+    call bw#hi('DiagnosticUnderlineHint',  a:c.none, a:c.none, 'underline')
+    call bw#hi('DiagnosticUnderlineInfo',  a:c.none, a:c.none, 'underline')
+    call bw#hi('DiagnosticUnderlineWarn',  a:c.none, a:c.none, 'underline')
+
+    " LSP
+    call bw#hi('LspReferenceText', a:c.none, a:c.medium_gray, 'none')
+    call bw#hilink('LspReferenceRead', 'LspReferenceText')
+    call bw#hilink('LspReferenceWrite', 'LspReferenceText')
+
+    call bw#hilink('LspSignatureActiveParameter', 'LspReferenceText')
+
+    call bw#hilink('LspCodeLens', 'Comment')
+    call bw#hilink('LspCodeLensSeparator', 'Comment')
+
+    " ------------
     " Languages
     " ------------
 
