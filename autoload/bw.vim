@@ -38,7 +38,7 @@ fun! bw#init(c) abort
     call bw#hi('LineNr', a:c.dark_gray, a:c.black, 'none')
     call bw#hi('MatchParen', a:c.none, a:c.medium_gray, 'bold')
     call bw#hi('Normal', a:c.white, a:c.black, 'none')
-    call bw#hi('NormalFloat', a:c.white, a:c.gray, 'none')
+    call bw#hi('NormalFloat', a:c.white, a:c.medium_gray, 'none')
     call bw#hi('Pmenu', a:c.white, a:c.medium_gray, 'none')
     call bw#hi('PmenuSel', a:c.none, a:c.gray, 'none')
     call bw#hi('Search', a:c.black, a:c.gold, 'none')
@@ -411,11 +411,11 @@ fun! bw#init(c) abort
     call bw#hilink('LazyReasonSource', 'LazyReasonCmd')
     call bw#hilink('LazyReasonStart', 'LazyReasonCmd')
 
-    call bw#hilink('LazyNormal', 'NormalFloat')
+    call bw#hi('LazyNormal', a:c.white, a:c.gray, 'none')
     call bw#hilink('LazyComment', 'Comment')
     call bw#hilink('LazySpecial', 'LazyCommit')
     call bw#hi('LazySpecial', a:c.white, a:c.none, 'bold')  " button shortcut, huge dot, some shortcuts
-    call bw#hilink('LazyNoCond', 'NormalFloat')
+    call bw#hilink('LazyNoCond', 'LazyNormal')
     call bw#hi('LazyProp', a:c.bright_white, a:c.none, 'none')
     call bw#hilink('LazyDimmed', 'Conceal')
 
@@ -423,7 +423,7 @@ fun! bw#init(c) abort
     call bw#hi('LazyProgressTodo', a:c.medium_gray, a:c.medium_gray, 'none')
 
     call bw#hilink('LazyTaskError', 'ErrorMsg')
-    call bw#hilink('LazyTaskOutput', 'NormalFloat')
+    call bw#hilink('LazyTaskOutput', 'LazyNormal')
     call bw#hilink('LazyValue', 'String')
 
     " Dirvish
