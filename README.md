@@ -4,8 +4,4 @@ Monochrome vim colorscheme
 
 ## Screenshots
 
-![C](screenshots/c.png)
-
-![Python](screenshots/python.png)
-
-![Light theme](screenshots/light.png)
+![Screenshot](screenshots/shot.png)
