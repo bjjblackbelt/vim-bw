@@ -181,6 +181,24 @@ fun! bw#init(c) abort
     call bw#hilink('@tag.delimiter', 'Delimiter')
 
     " ------------
+    " Semantic Highlighting (nvim 0.9+)
+    " ------------
+    call bw#hilink('@lsp.type.namespace', '@namespace')
+    call bw#hilink('@lsp.type.type', '@type')
+    call bw#hilink('@lsp.type.class', '@type')
+    call bw#hilink('@lsp.type.enum', '@type')
+    call bw#hilink('@lsp.type.interface', '@type')
+    call bw#hilink('@lsp.type.struct', '@structure')
+    call bw#hilink('@lsp.type.parameter', '@parameter')
+    call bw#hilink('@lsp.type.variable', '@variable')
+    call bw#hilink('@lsp.type.property', '@property')
+    call bw#hilink('@lsp.type.enumMember', '@constant')
+    call bw#hilink('@lsp.type.function', '@function')
+    call bw#hilink('@lsp.type.method', '@method')
+    call bw#hilink('@lsp.type.macro', '@macro')
+    call bw#hilink('@lsp.type.decorator', '@function')
+
+    " ------------
     " LSP, Diagnostics
     " ------------
 
