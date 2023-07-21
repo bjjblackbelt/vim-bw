@@ -394,6 +394,9 @@ fun! bw#init(c) abort
     call bw#hi('shShebang', a:c.dark_gray, a:c.none, 'italic')
     call bw#hi('shConditional', a:c.white, a:c.none, 'bold')
 
+    " SQL
+    call bw#hilink('sqlKeyword', 'Keyword')
+
     " XML
     call bw#hi('xmlAttrib', a:c.white, a:c.none, 'none')
     call bw#hi('xmlEndTag', a:c.white, a:c.none, 'none')
