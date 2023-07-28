@@ -351,6 +351,11 @@ fun! bw#init(c) abort
 
     call bw#hilink('@punctuation.special.markdown', 'mkdHeading')
     call bw#hilink('@text.reference.markdown', 'mkdHeading')
+    call bw#hilink('@text.title.1.marker', 'mkdHeading')
+    call bw#hilink('@text.title.2.marker', 'mkdHeading')
+    call bw#hilink('@text.title.3.marker', 'mkdHeading')
+    call bw#hilink('@text.title.4.marker', 'mkdHeading')
+    call bw#hilink('@text.title.5.marker', 'mkdHeading')
 
     " org-mode
     call bw#hi('orgTodo', a:c.green, a:c.none, 'none')
